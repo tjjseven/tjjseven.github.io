@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[git使用指南]]></title>
+    <url>%2F2017%2F12%2F21%2Ffirst-blog%2F</url>
+    <content type="text"><![CDATA[本地文件上传： 打开文件位置cmd--&gt;git clone url(仓库地址)--&gt;修改本地文件并移入远程仓库文件夹 --&gt;git add -A --&gt;git commit -m &quot;修改信息&quot;--&gt;git push origin master--&gt; 提示输入github用户名(*****)密码(*****)--&gt;push到远程仓库成功 本地创建仓库并上传：git status 查看状态 git log 查看日志信息 创建文件夹--&gt;右键Git Bash打开命令行--&gt;git init : 创建新的git仓库 --&gt;本地添加代码文件(工作区)--&gt;git add *(*代表所有文件)添加到(暂存区) --&gt;git commit -m &quot;修改信息&quot;(版本区) --&gt;git remote add origin url(连接仓库地址)--&gt; git pull --rebase origin master(合并文件)--&gt;git push origin master(push成功) 克隆远程仓库： 右键Git Bash打开命令行--&gt;git clone url(仓库地址)--&gt;success 查看关联远程仓库地址： git remote -v 移除关联远程仓库地址： git remote rm origin (git remote add origin [url]添加) 修改关联远程仓库地址： git remote set-url origin [url] 关于删除： git add/commit之后删除工作区的文件(本地)，但暂存区/版本区并未删除，需执行(git rm 文件名) 命令，可彻底删除 误删：git checkout可恢复最新commit的版本 git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git commit--&gt;git push--&gt;删除github文件 查看Git代理设置： git config --global http.proxy 取消代理设置： git config --global --unset http.proxy 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2017%2F12%2F20%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" 1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
