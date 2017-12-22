@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>阿七博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-12-22T17:26:15.370Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>tjjseven</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git使用指南及注意事项</title>
+    <link href="http://yoursite.com/2017/12/21/git-use/"/>
+    <id>http://yoursite.com/2017/12/21/git-use/</id>
+    <published>2017-12-20T20:12:39.000Z</published>
+    <updated>2017-12-22T17:26:15.370Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="克隆远程仓库并上传code："><a href="#克隆远程仓库并上传code：" class="headerlink" title="克隆远程仓库并上传code："></a>克隆远程仓库并上传code：</h4><pre><code>1. github创建仓库，本地安装git命令行工具TortoiseGit，新建文件并打开，右键执行git clone url[仓库地址]2. 使用SSH方式连接(若报错no supported authentication nethods available，提示身份验证)   解决方式：文件夹内右键选择TortoiseGit --&gt; Settings，在弹出的对话框中点击NetWork在右侧的区域配置   SSH Client项为Git安装目录下bin/ssh.exe文件3. 添加code到本地仓库文件(工作区),右键执行git bash打开TortoiseGit --&gt; git add -A(暂存区) --&gt;    git commit -m &quot;提交信息&quot;(版本区) --&gt; git push origin master(远程主分支)(若使用HTTPS方式会提示输   入github用户名密码，使用SSH方式并在配置SSH key时可不输入用户名密码，则无提示) --&gt; push成功</code></pre><a id="more"></a>    <h4 id="本地关联github仓库并上传code："><a href="#本地关联github仓库并上传code：" class="headerlink" title="本地关联github仓库并上传code："></a>本地关联github仓库并上传code：</h4><pre><code>1. 本地执行git init 初始化git仓库2. 执行上面步骤3添加code3. git remote add origin url(连接仓库地址)4. 若github仓库有最新code则先执行git pull --rebase origin master(合并文件)5. git push origin master(push成功)</code></pre><h4 id="配置SSH-key"><a href="#配置SSH-key" class="headerlink" title="配置SSH key"></a>配置SSH key</h4><pre><code>1. TortoiseGit执行cd ~/. ssh 检查本机已存在的ssh密钥，如果提示：No such file or directory 说明没有配置key2. ssh-keygen -t rsa -C &quot;github邮箱&quot;3. 连续3次回车，中间会提示输入用户名密码(若输入，push提交的时候也得输入)，生成key文件4. 打开用户目录C:\Users\Administrator\.ssh，找到id_rsa.pub(公钥)文件打开并复制5. 打开github主页，进入setting --&gt; SSH and GPG keys --&gt; New SSH key 配置即可6. ssh -T git@github.com检查配置是否成功(提示Hi yourname! You&apos;ve successfully authenticated,   but GitHub does not provide shell access.则成功)7. 若push的时候提示Could not read from remote repository.permission denied (publickey)需重新配置    注：使用其他工具push也会提示</code></pre><p>查看关联远程仓库地址：</p><pre><code>git remote -v</code></pre><p>移除关联远程仓库地址：</p><pre><code>git remote rm origin (git remote add origin [url]添加)</code></pre><p>修改关联远程仓库地址：</p><pre><code>git remote set-url origin [url]</code></pre><p>关于删除：</p><pre><code>1. git add/commit之后删除工作区的文件(本地)，但暂存区/版本区并未删除，需执行(git rm 文件名) 命令，可彻底删除2. 误删：git checkout可恢复最新commit的版本3. git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git commit--&gt;git push--&gt;删除github文件</code></pre><p>查看Git代理设置：</p><pre><code>git config --global http.proxy </code></pre><p>取消代理设置： </p><pre><code>git config --global --unset http.proxy </code></pre><p>配置本地TortoiseGit</p><pre><code>git config --global user.name &quot;github用户名&quot; git config --global user.email  &quot;github邮箱&quot;     </code></pre><h4 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h4><p>查看状态：git status<br>查看日志：git log<br>查看配置：git config –list<br>撤销修改：git checkout – file<br>删除文件：git rm file<br>添加记录：git add file 或 git add .<br>添加描述：git commit -m “miao shu nei rong”<br>同步数据：git pull<br>提交数据：git push origin name<br>查看分支：git branch<br>创建分支：git branch name<br>切换分支：git checkout name<br>创建+切换分支：git checkout -b name<br>合并某分支到当前分支：git merge name<br>删除分支：git branch -d name<br>删除远程分支：git push origin :name</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;克隆远程仓库并上传code：&quot;&gt;&lt;a href=&quot;#克隆远程仓库并上传code：&quot; class=&quot;headerlink&quot; title=&quot;克隆远程仓库并上传code：&quot;&gt;&lt;/a&gt;克隆远程仓库并上传code：&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;1. github创建仓库，本地安装git命令行工具TortoiseGit，新建文件并打开，右键执行git clone url[仓库地址]
+
+2. 使用SSH方式连接(若报错no supported authentication nethods available，提示身份验证)
+
+   解决方式：文件夹内右键选择TortoiseGit --&amp;gt; Settings，在弹出的对话框中点击NetWork在右侧的区域配置
+
+   SSH Client项为Git安装目录下bin/ssh.exe文件
+
+3. 添加code到本地仓库文件(工作区),右键执行git bash打开TortoiseGit --&amp;gt; git add -A(暂存区) --&amp;gt; 
+
+   git commit -m &amp;quot;提交信息&amp;quot;(版本区) --&amp;gt; git push origin master(远程主分支)(若使用HTTPS方式会提示输
+
+   入github用户名密码，使用SSH方式并在配置SSH key时可不输入用户名密码，则无提示) --&amp;gt; push成功
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://yoursite.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>markdown</title>
+    <link href="http://yoursite.com/2017/12/21/markdown/"/>
+    <id>http://yoursite.com/2017/12/21/markdown/</id>
+    <published>2017-12-20T17:12:39.000Z</published>
+    <updated>2017-12-22T17:30:50.011Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>编程语言  <ul><li>脚本语言  <ul><li>Python</li></ul></li></ul></li></ul><a id="more"></a>    <blockquote><p>数据结构</p></blockquote><p>&ensp;&ensp;半方大的空白或&#8194;两个空格一个<br>回车换行<br>&emsp;&emsp;全方大的空白或&#8195;换行<br><code>&lt;br/&gt;</code>换行<br>&nbsp;&nbsp;不断行的空白格或&#160;不断行的空白格或</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.circleData.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.circleData[i].count) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure><p><a href="http://blog.csdn.net/guodongxiaren" title="悬停显示" target="_blank" rel="noopener">我的博客</a> </p><p><code>linux</code></p><p><img src="http://www.baidu.com/img/bdlogo.gif" alt="baidu" title="百度logo">  </p><p><img src="https://github.com/tjjseven/mysite/raw/master/moblie/img/ym.jpeg" alt="">  </p><p><a href="https://v.qq.com/x/2017/" target="_blank" rel="noopener"><img src="http://www.baidu.com/img/bdlogo.gif" alt="baidu" title="百度Logo"></a></p><hr><p>Markdown[^1]</p><p><a href="#配置SSH-key">回到顶部</a></p><ul><li>文本1</li><li>文本1</li><li>文本1</li></ul><ul><li>文本2</li></ul><ul><li>文本3</li></ul><ol><li>文本1</li><li>文本2</li><li>文本3</li></ol><blockquote><p>一盏灯， 一片昏黄； 一简书， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。</p></blockquote><table><thead><tr><th>dog</th><th>bird</th><th>cat</th></tr></thead><tbody><tr><td>foo</td><td>foo</td><td>foo</td></tr><tr><td>bar</td><td>bar</td><td>bar</td></tr><tr><td>baz</td><td>baz</td><td>baz</td></tr></tbody></table><ul><li style="list-style: none"><input type="checkbox"> Android</li><li style="list-style: none"><input type="checkbox" checked> C#</li></ul><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ 鸟宿池边树，僧敲月下门</span></span><br><span class="line"><span class="deletion">- 鸟宿池边树，僧推月下门</span></span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ 鸟宿池边树，僧敲月下门</span><br><span class="line">- 鸟宿池边树，僧推月下门</span><br></pre></td></tr></table></figure><div class="note default"><ol><li>数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； </li></ol></div><div class="note primary"><ol><li>数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； </li></ol></div><div class="note success"><ol><li>数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； </li></ol></div><div class="note info"><ol><li>数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； </li></ol></div><div class="note warning"><ol><li>数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； </li></ol></div><div class="note danger"><ol><li>数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； </li></ol></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;编程语言  &lt;ul&gt;
+&lt;li&gt;脚本语言  &lt;ul&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="markdown" scheme="http://yoursite.com/categories/markdown/"/>
+    
+    
+      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+    
+  </entry>
+  
+</feed>

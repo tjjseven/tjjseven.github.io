@@ -81,6 +81,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="阿七博客" type="application/atom+xml" />
+
 
 
 
@@ -291,12 +293,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/21/first-blog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/21/git-use/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tjjseven">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/tx.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -310,7 +312,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/21/first-blog/" itemprop="url">git使用指南</a></h2>
+                <a class="post-title-link" href="/2017/12/21/git-use/" itemprop="url">git使用指南及注意事项</a></h2>
         
 
         <div class="post-meta">
@@ -345,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -383,39 +385,27 @@
 
       
         
-          
-            <p>本地文件上传：</p>
-<pre><code>打开文件位置cmd--&gt;git clone url(仓库地址)--&gt;修改本地文件并移入远程仓库文件夹
+          <h4 id="克隆远程仓库并上传code："><a href="#克隆远程仓库并上传code：" class="headerlink" title="克隆远程仓库并上传code："></a>克隆远程仓库并上传code：</h4><pre><code>1. github创建仓库，本地安装git命令行工具TortoiseGit，新建文件并打开，右键执行git clone url[仓库地址]
 
---&gt;git add -A --&gt;git commit -m &quot;修改信息&quot;--&gt;git push origin master--&gt;
+2. 使用SSH方式连接(若报错no supported authentication nethods available，提示身份验证)
 
-提示输入github用户名(*****)密码(*****)--&gt;push到远程仓库成功
-</code></pre><p>本地创建仓库并上传：git status 查看状态  git log 查看日志信息</p>
-<pre><code>创建文件夹--&gt;右键Git Bash打开命令行--&gt;git init : 创建新的git仓库
---&gt;本地添加代码文件(工作区)--&gt;git add *(*代表所有文件)添加到(暂存区)
---&gt;git commit -m &quot;修改信息&quot;(版本区) --&gt;git remote add origin url(连接仓库地址)--&gt;
-git pull --rebase origin master(合并文件)--&gt;git push origin master(push成功)
-</code></pre><p>克隆远程仓库：</p>
-<pre><code>右键Git Bash打开命令行--&gt;git clone url(仓库地址)--&gt;success
-</code></pre><p>查看关联远程仓库地址：</p>
-<pre><code>git remote -v
-</code></pre><p>移除关联远程仓库地址：</p>
-<pre><code>git remote rm origin (git remote add origin [url]添加)
-</code></pre><p>修改关联远程仓库地址：</p>
-<pre><code>git remote set-url origin [url]
-</code></pre><p>关于删除：</p>
-<pre><code>git add/commit之后删除工作区的文件(本地)，但暂存区/版本区并未删除，需执行(git rm 文件名) 命令，可彻底删除
-误删：git checkout可恢复最新commit的版本
-git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git commit--&gt;git push--&gt;删除github文件
-</code></pre><p>查看Git代理设置：</p>
-<pre><code>git config --global http.proxy 
-</code></pre><p>取消代理设置： </p>
-<pre><code>git config --global --unset http.proxy 
-</code></pre><div class="note default"><ol>
-<li>数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； </li>
-</ol></div>
+   解决方式：文件夹内右键选择TortoiseGit --&gt; Settings，在弹出的对话框中点击NetWork在右侧的区域配置
 
-          
+   SSH Client项为Git安装目录下bin/ssh.exe文件
+
+3. 添加code到本地仓库文件(工作区),右键执行git bash打开TortoiseGit --&gt; git add -A(暂存区) --&gt; 
+
+   git commit -m &quot;提交信息&quot;(版本区) --&gt; git push origin master(远程主分支)(若使用HTTPS方式会提示输
+
+   入github用户名密码，使用SSH方式并在配置SSH key时可不输入用户名密码，则无提示) --&gt; push成功
+</code></pre>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/21/git-use/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -462,12 +452,12 @@ git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/20/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/21/markdown/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tjjseven">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/tx.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -481,7 +471,7 @@ git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/20/hello-world/" itemprop="url">Hello World</a></h2>
+                <a class="post-title-link" href="/2017/12/21/markdown/" itemprop="url">markdown</a></h2>
         
 
         <div class="post-meta">
@@ -493,8 +483,8 @@ git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-20T21:58:57+08:00">
-                2017-12-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-21T01:12:39+08:00">
+                2017-12-21
               </time>
             
 
@@ -503,6 +493,28 @@ git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/markdown/" itemprop="url" rel="index">
+                    <span itemprop="name">markdown</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -532,10 +544,18 @@ git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git
 
       
         
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo,
+          <ul>
+<li>编程语言  <ul>
+<li>脚本语言  <ul>
+<li>Python</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/20/hello-world/#more" rel="contents">
+            <a class="btn" href="/2017/12/21/markdown/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -609,7 +629,7 @@ git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/avatar.gif"
+                src="/images/tx.png"
                 alt="tjjseven" />
             
               <p class="site-author-name" itemprop="name">tjjseven</p>
@@ -634,7 +654,7 @@ git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -645,7 +665,7 @@ git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -653,6 +673,13 @@ git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           <div class="links-of-author motion-element">
@@ -665,7 +692,7 @@ git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                  <a href="mailto:tang95279@163.com" target="_blank" title="E-Mail">
                     
                       <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
@@ -692,11 +719,11 @@ git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://example.com/" title="个人简介" target="_blank">个人简介</a>
+                    <a href="http://tseven.top/mysite/index.html" title="个人简介" target="_blank">个人简介</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://example.com/" title="摄影网站" target="_blank">摄影网站</a>
+                    <a href="" title="摄影网站" target="_blank">摄影网站</a>
                   </li>
                 
               </ul>
@@ -724,7 +751,7 @@ git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
-    <i class="fa fa-bullseye"></i>
+    <i class="fa fa-flag"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">前端技术</span>
 
@@ -738,7 +765,7 @@ git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git
 
 
 
-  <div class="footer-custom">Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a></div>
+  <div class="footer-custom">Hosted by <a target="_blank" href="http://tseven.top">tjjseven</a> | <a target="_blank" href="http://localhost:4000/sitemap.xml">sitemap</a></div>
 
 
         
