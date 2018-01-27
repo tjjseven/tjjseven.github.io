@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[git使用指南及注意事项]]></title>
-    <url>%2F2017%2F12%2F21%2Fgit-use%2F</url>
+    <url>%2F2017%2Fusegit%2F</url>
     <content type="text"><![CDATA[克隆远程仓库并上传code：1. github创建仓库，本地安装git命令行工具TortoiseGit，新建文件并打开，右键执行git clone url[仓库地址] 2. 使用SSH方式连接(若报错no supported authentication nethods available，提示身份验证) 解决方式：文件夹内右键选择TortoiseGit --&gt; Settings，在弹出的对话框中点击NetWork在右侧的区域配置 SSH Client项为Git安装目录下bin/ssh.exe文件 3. 添加code到本地仓库文件(工作区),右键执行git bash打开TortoiseGit --&gt; git add -A(暂存区) --&gt; git commit -m &quot;提交信息&quot;(版本区) --&gt; git push origin master(远程主分支)(若使用HTTPS方式会提示输 入github用户名密码，使用SSH方式并在配置SSH key时可不输入用户名密码，则无提示) --&gt; push成功 本地关联github仓库并上传code：1. 本地执行git init 初始化git仓库 2. 执行上面步骤3添加code 3. git remote add origin url(连接仓库地址) 4. 若github仓库有最新code则先执行git pull --rebase origin master(合并文件) 5. git push origin master(push成功) 配置SSH key1. TortoiseGit执行cd ~/. ssh 检查本机已存在的ssh密钥，如果提示：No such file or directory 说明没有配置key 2. ssh-keygen -t rsa -C &quot;github邮箱&quot; 3. 连续3次回车，中间会提示输入用户名密码(若输入，push提交的时候也得输入)，生成key文件 4. 打开用户目录C:\Users\Administrator\.ssh，找到id_rsa.pub(公钥)文件打开并复制 5. 打开github主页，进入setting --&gt; SSH and GPG keys --&gt; New SSH key 配置即可 6. ssh -T git@github.com检查配置是否成功(提示Hi yourname! You&apos;ve successfully authenticated, but GitHub does not provide shell access.则成功) 7. 若push的时候提示Could not read from remote repository.permission denied (publickey)需重新配置 注：使用其他工具push也会提示 查看关联远程仓库地址： git remote -v 移除关联远程仓库地址： git remote rm origin (git remote add origin [url]添加) 修改关联远程仓库地址： git remote set-url origin [url] 关于删除： 1. git add/commit之后删除工作区的文件(本地)，但暂存区/版本区并未删除，需执行(git rm 文件名) 命令，可彻底删除 2. 误删：git checkout可恢复最新commit的版本 3. git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git commit--&gt;git push--&gt;删除github文件 查看Git代理设置： git config --global http.proxy 取消代理设置： git config --global --unset http.proxy 配置本地TortoiseGit git config --global user.name &quot;github用户名&quot; git config --global user.email &quot;github邮箱&quot; 其他操作查看状态：git status查看日志：git log查看配置：git config –list撤销修改：git checkout – file删除文件：git rm file添加记录：git add file 或 git add .添加描述：git commit -m “miao shu nei rong”同步数据：git pull提交数据：git push origin name查看分支：git branch创建分支：git branch name切换分支：git checkout name创建+切换分支：git checkout -b name合并某分支到当前分支：git merge name删除分支：git branch -d name删除远程分支：git push origin :name]]></content>
       <categories>
         <category>git</category>
@@ -13,7 +13,7 @@
   </entry>
   <entry>
     <title><![CDATA[markdown]]></title>
-    <url>%2F2017%2F12%2F21%2Fmarkdown%2F</url>
+    <url>%2F2017%2Fmarkdown%2F</url>
     <content type="text"><![CDATA[编程语言 脚本语言 Python 数据结构 &ensp;&ensp;半方大的空白或&#8194;两个空格一个回车换行&emsp;&emsp;全方大的空白或&#8195;换行&lt;br/&gt;换行&nbsp;&nbsp;不断行的空白格或&#160;不断行的空白格或 1234567for (var i = 0; i &lt; this.circleData.length; i++) &#123; if (this.circleData[i].count) &#123; return true &#125; else &#123; return false &#125; &#125; 我的博客 linux Markdown[^1] 回到顶部 文本1 文本1 文本1 文本2 文本3 文本1 文本2 文本3 一盏灯， 一片昏黄； 一简书， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。 dog bird cat foo foo foo bar bar bar baz baz baz Android C# 12+ 鸟宿池边树，僧敲月下门- 鸟宿池边树，僧推月下门 12+ 鸟宿池边树，僧敲月下门- 鸟宿池边树，僧推月下门 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；]]></content>
       <categories>
         <category>markdown</category>
