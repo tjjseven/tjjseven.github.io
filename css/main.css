@@ -1092,6 +1092,22 @@ pre .javascript .function {
 .header {
   background: transparent;
 }
+#header {
+  background: url("./bg.jpg") no-repeat center center;
+  background-size: cover;
+}
+#header a {
+  color: #fff;
+}
+#local-search-result a {
+  color: #555;
+}
+#header .brand {
+  background: rgba(4,4,4,0.251);
+}
+#header .header-inner {
+  padding: 100px 0;
+}
 .header-inner {
   position: relative;
 }
@@ -1822,7 +1838,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4b3cff;
+  background: #bfffda;
 }
 .links-of-blogroll {
   font-size: 13px;
