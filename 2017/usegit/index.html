@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="阿七博客">
 <meta property="og:description" content="克隆远程仓库并上传code：1. github创建仓库，本地安装git命令行工具TortoiseGit，新建文件并打开，右键执行git clone url[仓库地址]  2. 使用SSH方式连接(若报错no supported authentication nethods available，提示身份验证)     解决方式：文件夹内右键选择TortoiseGit --&amp;gt; Settings，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-22T17:26:15.370Z">
+<meta property="og:updated_time" content="2019-02-21T02:14:02.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用指南及注意事项">
 <meta name="twitter:description" content="克隆远程仓库并上传code：1. github创建仓库，本地安装git命令行工具TortoiseGit，新建文件并打开，右键执行git clone url[仓库地址]  2. 使用SSH方式连接(若报错no supported authentication nethods available，提示身份验证)     解决方式：文件夹内右键选择TortoiseGit --&amp;gt; Settings，">
@@ -423,18 +423,35 @@
 7. 若push的时候提示Could not read from remote repository.permission denied (publickey)需重新配置
 
     注：使用其他工具push也会提示
-</code></pre><p>查看关联远程仓库地址：</p>
+</code></pre><h4 id="关于删除："><a href="#关于删除：" class="headerlink" title="关于删除："></a>关于删除：</h4><pre><code>1. git add/commit之后删除工作区的文件(本地)，但暂存区/版本区并未删除，需执行(git rm 文件名) 命令，
+
+    可彻底删除
+
+2. 误删：git checkout可恢复最新commit的版本
+
+3. git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git commit--&gt;git push--&gt;删除github文件
+</code></pre><h4 id="关于分支："><a href="#关于分支：" class="headerlink" title="关于分支："></a>关于分支：</h4><pre><code>git checkout -b &lt;分支名&gt; 创建一个分支并切换--&gt;修改代码--&gt;git add *--&gt;git commit -m &quot;&quot;--&gt;git push origin &lt;分支名&gt;推送到远程仓库
+</code></pre><p><code>注意</code>：推送之前可删除 git branch -d 分支名(没有commit可用-d)(commit之后，没有合并之前用-D) (在其他分支下)</p>
+<p>切换到主分支：git checkout master(切换之前必须commit)</p>
+<p>将远程仓库分支更新到本地 ：git pull origin &lt;分支名&gt; （自动将更新合并）   git fetch origin master:&lt;分支名&gt;</p>
+<p>合并：git merge &lt;分支名&gt;–&gt;出现冲突 手动合并–&gt;</p>
+<pre><code>手动合并如下：
+
+        &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD(合并分支区)
+        =======
+        （合并分支区最后的内容）
+
+        （被合并分支区内容）
+        &gt;&gt;&gt;&gt;&gt;&gt;&gt; f(被合并分支区)
+</code></pre><p>查看每次commit提交后版本信息：git log  退出：q</p>
+<p>工作区某一个文件改动之后，又想回到之前的commit版本区，执行命令 git checkout &lt;文件名&gt;</p>
+<p>工作区所有文件改动之后，又想回到之前的commit版本区，执行命令 git fetch origin     git reset –hard origin/master</p>
+<h4 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h4><p>查看关联远程仓库地址：</p>
 <pre><code>git remote -v
 </code></pre><p>移除关联远程仓库地址：</p>
 <pre><code>git remote rm origin (git remote add origin [url]添加)
 </code></pre><p>修改关联远程仓库地址：</p>
 <pre><code>git remote set-url origin [url]
-</code></pre><p>关于删除：</p>
-<pre><code>1. git add/commit之后删除工作区的文件(本地)，但暂存区/版本区并未删除，需执行(git rm 文件名) 命令，可彻底删除
-
-2. 误删：git checkout可恢复最新commit的版本
-
-3. git rm -r 文件名： 删除本地文件(删除前备份)--&gt;git add--&gt;git commit--&gt;git push--&gt;删除github文件
 </code></pre><p>查看Git代理设置：</p>
 <pre><code>git config --global http.proxy 
 </code></pre><p>取消代理设置： </p>
@@ -442,8 +459,23 @@
 </code></pre><p>配置本地TortoiseGit</p>
 <pre><code>git config --global user.name &quot;github用户名&quot; 
 git config --global user.email  &quot;github邮箱&quot;     
-</code></pre><h4 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h4><p>查看状态：git status<br>查看日志：git log<br>查看配置：git config –list<br>撤销修改：git checkout – file<br>删除文件：git rm file<br>添加记录：git add file 或 git add .<br>添加描述：git commit -m “miao shu nei rong”<br>同步数据：git pull<br>提交数据：git push origin name<br>查看分支：git branch<br>创建分支：git branch name<br>切换分支：git checkout name<br>创建+切换分支：git checkout -b name<br>合并某分支到当前分支：git merge name<br>删除分支：git branch -d name<br>删除远程分支：git push origin :name</p>
-
+</code></pre><h4 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h4><pre><code>查看状态：git status
+查看日志：git log
+查看配置：git config --list
+撤销修改：git checkout -- file
+删除文件：git rm file
+添加记录：git add file 或 git add .
+添加描述：git commit -m &quot;miao shu nei rong&quot;
+同步数据：git pull
+提交数据：git push origin name
+查看分支：git branch
+创建分支：git branch name
+切换分支：git checkout name
+创建+切换分支：git checkout -b name
+合并某分支到当前分支：git merge name
+删除分支：git branch -d name
+删除远程分支：git push origin :name
+</code></pre>
       
     </div>
     
@@ -482,6 +514,10 @@ git config --global user.email  &quot;github邮箱&quot;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/cae/" rel="prev" title="伪类和伪元素">
+                伪类和伪元素 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -562,7 +598,7 @@ git config --global user.email  &quot;github邮箱&quot;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -573,7 +609,7 @@ git config --global user.email  &quot;github邮箱&quot;
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -584,7 +620,7 @@ git config --global user.email  &quot;github邮箱&quot;
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -645,6 +681,10 @@ git config --global user.email  &quot;github邮箱&quot;
                     <a href="" title="摄影网站" target="_blank">摄影网站</a>
                   </li>
                 
+                  <li class="links-of-blogroll-item">
+                    <a href="http://tseven.top/mycomp/index.html" title="TSui" target="_blank">TSui</a>
+                  </li>
+                
               </ul>
             </div>
           
@@ -664,7 +704,7 @@ git config --global user.email  &quot;github邮箱&quot;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#克隆远程仓库并上传code："><span class="nav-number">1.</span> <span class="nav-text">克隆远程仓库并上传code：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地关联github仓库并上传code："><span class="nav-number">2.</span> <span class="nav-text">本地关联github仓库并上传code：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置SSH-key"><span class="nav-number">3.</span> <span class="nav-text">配置SSH key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他操作"><span class="nav-number">4.</span> <span class="nav-text">其他操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#克隆远程仓库并上传code："><span class="nav-number">1.</span> <span class="nav-text">克隆远程仓库并上传code：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地关联github仓库并上传code："><span class="nav-number">2.</span> <span class="nav-text">本地关联github仓库并上传code：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置SSH-key"><span class="nav-number">3.</span> <span class="nav-text">配置SSH key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于删除："><span class="nav-number">4.</span> <span class="nav-text">关于删除：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于分支："><span class="nav-number">5.</span> <span class="nav-text">关于分支：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用操作"><span class="nav-number">6.</span> <span class="nav-text">常用操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他操作"><span class="nav-number">7.</span> <span class="nav-text">其他操作</span></a></li></ol></div>
             
 
           </div>
@@ -684,7 +724,7 @@ git config --global user.email  &quot;github邮箱&quot;
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-flag"></i>
   </span>
