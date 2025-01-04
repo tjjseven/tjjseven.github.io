@@ -1,0 +1,344 @@
+html{
+	scroll-behavior: smooth;
+}
+body{
+    /* --color: #05a6ff; */
+    background: #EDF0F5;
+    /*background: #F4F6F9;*/
+}
+/* 滚动条宽高 */
+::-webkit-scrollbar {
+	width: 7px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: #ccc;
+}
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+	
+}
+/* 滚动条两端按钮 */
+::-webkit-scrollbar-button {
+	
+}
+a.color{
+    color: var(--color) !important;
+}
+
+
+.box{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	background: #fff;
+}
+.box .title{
+    text-align: center;
+    font-size: 36px;
+    /*font-weight: 600;*/
+    letter-spacing: -9px;
+    color: var(--color);
+    /* border-bottom: 1px solid #e6e6e6; */
+	
+}
+.box .title span{
+    letter-spacing: 0;
+    margin-left: 8px;
+    font-size: 36px;
+	color: var(--color);
+}
+.box img{
+	width: 100%;
+	height: 40vh;
+	object-fit: cover;
+}
+.box svg{
+	cursor: pointer;
+	color: var(--color);
+}
+.box .title, .box img, .box svg{
+	/* height: 33.33vh; */
+}
+
+
+header{
+    background: #fff;
+    box-shadow: 0 2px 7px #e2e2e2;
+	position: sticky;
+	top: 0;
+	z-index: 999;
+}
+ul.nav{
+    overflow: hidden;
+    margin: 0 25% 10px;
+}
+.nav li{
+    float: left;
+    padding: 2.5% 3%;
+}
+
+
+.content{
+	width: 82%;
+	margin: 0 auto;
+}
+.ts{
+	margin-left: 130px;
+	margin-right: 260px;
+}
+.ts_item{
+    box-shadow: 0 0 25px rgba(81, 85, 99, 0.05), 0 20px 25px rgba(81, 85, 99, 0.05), 0 3px 4px rgba(81, 85, 99, 0.05);
+    padding: 0 5%;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.ts h2{
+    font-size: 16px;
+    padding: 4px 20px;
+    margin: 30px 0;
+    border-left: 2px solid var(--color);
+    border-right: 2px solid var(--color);
+    background: #efefef;
+    font-weight: normal;
+    color: #505050;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+}
+.ts .title{
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.ts .title p{
+    padding-bottom: 10px;
+}
+hr{
+    border:none;
+    height: 1px;
+    margin-top: 35px;
+}
+
+aside{
+    float: left;
+}
+aside ul{
+	width: 120px;
+	border-radius: 3px;
+    background: #fff;
+    padding:0 15px;
+    box-shadow: 0 0 25px rgba(81, 85, 99, 0.05), 0 20px 25px rgba(81, 85, 99, 0.05), 0 3px 4px rgba(81, 85, 99, 0.05);
+}
+aside ul li{
+    border-bottom: 1px solid #e6e6e6;
+    padding: 12px 0;
+    cursor: pointer;
+}
+aside ul li:hover{
+    color: var(--color);
+}
+
+.right{
+	float: right;
+	width: 250px;
+}
+.right ul, .right>div{
+	box-shadow: 0 0 25px rgba(81, 85, 99, 0.05), 0 20px 25px rgba(81, 85, 99, 0.05), 0 3px 4px rgba(81, 85, 99, 0.05);
+}
+.right ul li{
+	text-align: center;
+}
+.right ul li, .right .timelife, .right .tag-box{
+	background: #fff;
+	margin-bottom: 10px;
+	border-radius: 3px;
+	padding: 20px;
+}
+
+
+
+
+span.my_icon{
+    font-size: 20px;
+    color: var(--color);
+    float: right;
+    margin: 30px 20px 30px 0;
+    cursor: pointer;
+}
+.t-code{
+    /*background: #dee8ef !important;*/
+    /*background: #eceff1 !important;*/
+    margin-top: 0;
+    color: var(--color);
+    height: 0;
+    line-height: 25px;
+    overflow-y: hidden;
+    /*display: none;*/
+    transition: all .2s linear;
+}
+.t-code p{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.hljs{
+    padding: 15px 10px 10px 15px !important;
+    background: #e9f1f7 !important;
+}
+.hljs-comment{
+    font-style: normal !important;
+}
+
+/**************/
+.linkage_margin{
+    padding-bottom: 100px;
+}
+.t-banner li:nth-of-type(odd){
+    height: 250px;
+    background: var(--color);
+}
+.t-banner li:nth-of-type(even){
+    height: 250px;
+    background: #d25c38;
+}
+.t-marqueebox{
+    margin-bottom: 10px;
+}
+/**/
+.box1, .box2, .box3, .box4{
+    width: 100px;
+    height: 50px;
+}
+.box1, .box2, .box3{
+    overflow: hidden;
+}
+.box2, .box3{
+    transform: rotate(60deg);
+}
+.box4{
+    background-color: var(--color);
+    text-align: center;
+    line-height: 50px;
+    transform: rotate(-120deg);
+    color: #fff;
+}
+.box-all{
+    position: fixed;
+    right: 8%;
+    top:0;
+    width: 12%;
+    height: 100%;
+}
+.box-all .box1{
+    position: absolute;
+    cursor: pointer;
+}
+.boxa{
+    top: 300px;
+    right: 35px;
+}
+.boxb{
+    top: 249px;
+    right: 35px;
+}
+.boxc{
+    top: 351px;
+    right: 35px;
+}
+.boxd{
+    top: 274px;
+    right: -9px;
+}
+.boxe{
+    top: 325px;
+    right: -9px;
+}
+.boxf{
+    top: 275px;
+    right: 79px;
+}
+.boxg{
+    top: 377px;
+    right: 79px;
+}
+.boxh{
+    top: 428px;
+    right: 79px;
+}
+.boxi{
+    top: 301px;
+    right: 123px;
+}
+.boxj{
+    top: 454px;
+    right: 35px;
+}
+
+.nip, .wip, .adddress{
+    padding-right: 10px;
+}
+
+
+.timelife .item:not(:last-of-type){
+	margin-bottom: 10px;
+}
+.timelife .title{
+	padding-bottom: 9px;
+}
+.progress {
+	display: flex;
+	align-items: center;
+}
+.progress-bar {
+	height: 10px;
+	border-radius: 5px;
+	overflow: hidden;
+	background: #ebeef5;
+	width: 0;
+	min-width: 0;
+	flex: 1;
+	margin-right: 5px;
+}
+.progress-bar-inner {
+	width: 0;
+	height: 100%;
+	border-radius: 5px;
+	transition: width 0.35s;
+	animation: progress 750ms linear infinite;
+}
+@keyframes progress {
+    0% {
+        background-position: 0 0
+    }
+    100% {
+        background-position: 30px 0
+    }
+}
+.progress-bar-inner-0 {
+	background: #bde6ff;
+	background-image: linear-gradient(135deg, #50bfff 25%, transparent 25%, transparent 50%, #50bfff 50%, #50bfff 75%, transparent 75%, transparent 100%);
+	background-size: 30px 30px;
+}
+.progress-bar-inner-1 {
+	background: #ffd980;
+	background-image: linear-gradient(135deg, #f7ba2a 25%, transparent 25%, transparent 50%, #f7ba2a 50%, #f7ba2a 75%, transparent 75%, transparent 100%);
+	background-size: 30px 30px;
+}
+.progress-bar-inner-2 {
+	background: #ffa9a9;
+	background-image: linear-gradient(135deg, #ff4949 25%, transparent 25%, transparent 50%, #ff4949 50%, #ff4949 75%, transparent 75%, transparent 100%);
+	background-size: 30px 30px;
+}
+.progress-bar-inner-3 {
+	background: #67c23a;
+	background-image: linear-gradient(135deg, #4f9e28 25%, transparent 25%, transparent 50%, #4f9e28 50%, #4f9e28 75%, transparent 75%, transparent 100%);
+	background-size: 30px 30px;
+}
+.progress-percentage {
+	color: #909399;
+}

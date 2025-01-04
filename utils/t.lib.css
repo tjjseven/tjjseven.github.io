@@ -1,0 +1,165 @@
+*{
+    padding: 0;
+    margin: 0;
+	font-weight: normal;
+	font-size: 14px;
+	color: #666;
+	box-sizing: border-box;
+	outline: none;
+	font-style: normal;
+	/* all: unset; */
+}
+ul, ol, li, dl, dd, dt{
+    list-style: none;
+}
+a, a:link, a:visited, a:hover, a:active{
+	color: #666;
+    text-decoration: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*伪类清浮动*/
+.clearfix:after,.clearfix:before{
+    content:"";
+    display:block;
+    clear: both;
+}
+.clearfix{
+    _zoom:1;
+}
+
+/*字体居中*/
+.text-center{
+    text-align: center;
+}
+
+/*水平居中*/
+.hor_center{
+    margin: 0 auto;
+}
+
+/*垂直居中*/
+.ver_center{
+    vertical-align: middle;
+}
+
+/*水平垂直居中 固定高度*/
+.children_height_hv_center{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    _zoom:1;
+}
+
+/*水平垂直居中 不固定高度*/
+.parent_hv_center1{
+    display: flex;
+    display: -webkit-flex;
+    display: -webkit-box;
+}
+.children_hv_center1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent_hv_center2{
+    position: relative;
+}
+.children_hv_center2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translate(-50%, -50%);
+}
+
+
+.parent_hv_center3{
+    display: table;
+}
+/*宽度设置无效*/
+  .children_hv_center3{
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+  }
+
+.parent_hv_center4{text-align: center;}
+.parent_hv_center4:before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+}
+.children_hv_center4{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*伪类加边框*/
+.border{
+    position: relative;
+}
+.border:after{
+    display: block;
+    width: 1px;
+    content: "";
+    height: 100%;
+    border-right:1px solid silver;
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: 100;
+}
+
+/*省略号*/
+.ellipsis{
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/*超过两行显示省略号*/
+.ellipsis_two{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+}
+
+/*三角形*/
+.triangle{
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent ;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #7e7e7e;
+    border-left: 10px solid transparent;
+}
+
+/*去掉select三角标及边框*/
+.missel{
+    border:1px solid #fff;
+    outline: none;
+    -moz-outline: none;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+    padding-right: 14px;
+}
+
+/*去掉默认黄色背景*/
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}

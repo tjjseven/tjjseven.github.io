@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ts</title>
+    <!--自适应移动设备-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--作者信息，网站地址-->
+    <meta name="author" content="www.ts.com">
+    <!-- 苹果手机是否全屏显示页面-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!--控制苹果手机状态栏的颜色-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--数字不能当作电话号码使用-->
+    <meta name="format-detection" content="telephone=no">
+    <!--防止浏览器缓存数据-->
+    <meta http-equiv="Expires" content="-1"><!--数据缓存-->
+    <meta http-equiv="Cache-Control" content="no-cache"><!--所有缓存-->
+    <meta http-equiv="Pragma" content="no-cache"><!--参数缓存-->
+    <!--关键字，描述信息-->
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="网站描述信息" />
+    <!--网站LOGO-->
+    <!--<link href="img/logo.gif" rel="shortcut icon" type="image/x-icon"/>-->
+    <!--开发中使用ico格式-->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <!-- 强制Chromium内核，作用于360浏览器、QQ浏览器等国产双核浏览器：-->
+    <meta name="renderer" content="webkit"/>
+    <!--强制Chromium内核，作用于其他双核浏览器：-->
+    <meta name="force-rendering" content="webkit"/>
+    <!--如果有安装 Google Chrome Frame 插件则强制为Chromium内核，否则强制本机支持的最高版本IE内核，作用于IE浏览器：-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <link rel="stylesheet" href="./css/index.css"/>
+    <link rel="stylesheet" href="./utils/animate.css">
+    <link rel="stylesheet" href="./utils/ts.css"/>
+	<link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="https://fastly.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.min.css">
+    <!--<link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/atelier-estuary-dark.min.css" rel="stylesheet">-->
+    <!--<link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/default.min.css" rel="stylesheet">-->
+    <!--<link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/docco.min.css" rel="stylesheet">-->
+    <!--<link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/foundation.min.css" rel="stylesheet">-->
+    <!--<link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/github-gist.min.css" rel="stylesheet">-->
+    <link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/github.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/googlecode.min.css" rel="stylesheet">-->
+    <!--<link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/grayscale.min.css" rel="stylesheet">-->
+    <!--<link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/vs.min.css" rel="stylesheet">-->
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://at.alicdn.com/t/font_780508_uf2nob4h8j.js"></script>
+	<script src="https://npm.elemecdn.com/jquery@3.5.1/dist/jquery.min.js"></script>
+	<script src="https://npm.elemecdn.com/typecho-joe-next@6.2.3/plugin/3dtag/3dtag.min.js"></script>
+    <script src="https://cdn.bootcss.com/require.js/2.3.5/require.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--[if IE 9]>
+    <style type="text/css" media="screen">
+        body{behavior:url("utils/csshover.htc");}
+        .border-radius{behavior: url("utils/PIE.htc");}
+    </style>
+    <![endif]-->
+    <!--透明照片-->
+    <!--[if IE 6]>
+    <script src="utils/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('img');</script>
+    <![endif]-->
+	<style>
+		
+	</style>
+</head>
+<body>
+<!-- <div class="boxs"></div>	 -->
+<!--右侧导航蜂巢-->
+<div class="box-all" style="display: none;">
+    <div class="box1 boxa">
+        <div class="box2">
+            <div class="box3">
+                <div class="box4"><a href="">首页</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="box1 boxb">
+        <div class="box2">
+            <div class="box3">
+                <div class="box4">3</div>
+            </div>
+        </div>
+    </div>
+    <div class="box1 boxc">
+        <div class="box2">
+            <div class="box3">
+                <div class="box4">4</div>
+            </div>
+        </div>
+    </div>
+    <div class="box1 boxd">
+        <div class="box2">
+            <div class="box3">
+                <div class="box4">5</div>
+            </div>
+        </div>
+    </div>
+    <div class="box1 boxe">
+        <div class="box2">
+            <div class="box3">
+                <div class="box4">6</div>
+            </div>
+        </div>
+    </div>
+    <div class="box1 boxf">
+        <div class="box2">
+            <div class="box3">
+                <div class="box4">7</div>
+            </div>
+        </div>
+    </div>
+    <div class="box1 boxg">
+        <div class="box2">
+            <div class="box3">
+                <div class="box4">1</div>
+            </div>
+        </div>
+    </div>
+    <div class="box1 boxh">
+        <div class="box2">
+            <div class="box3">
+                <div class="box4">8</div>
+            </div>
+        </div>
+    </div>
+    <div class="box1 boxi">
+        <div class="box2">
+            <div class="box3">
+                <div class="box4">9</div>
+            </div>
+        </div>
+    </div>
+    <div class="box1 boxj">
+        <div class="box2">
+            <div class="box3">
+                <div class="box4">10</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+	<div class="title">TS <span>ui</span></div>
+	<img src="./img/1.svg" alt="">
+	<?xml version="1.0" encoding="UTF-8"?>
+	<svg class="ld ld-bounce" width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M36 12L24 24L12 12" stroke="#666" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M36 24L24 36L12 24" stroke="#666" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+	</svg>
+</div>
+
+<!--头部nav-->
+<header>
+    <ul class="nav">
+        <li><a href="#/layout" class="layout">布局</a></li>
+        <li><a href="#/css" class="css">css</a></li>
+        <li><a href="#/components" class="components">组件</a></li>
+        <!--<li id="layout"></li>-->
+        <!--<li id="css"></li>-->
+        <!--<li id="components"></li>-->
+    </ul>
+</header>
+<div class="content">
+	<!--左侧菜单-->
+	<aside>
+	    <ul></ul>
+	</aside>
+	<div class="right">
+		<ul>
+			<li><a href="./page/ui.html" target="_blank">前端资源库推荐</a></li>
+			<li><a href="./page/hots.html" target="_blank">热搜榜</a></li>
+		</ul>
+		<div class="timelife"></div>
+		<div class="tag-box"></div>
+	</div>
+	<!--正文-->
+	<div class="ts">
+	    <div class="title ts_item">
+	        <p class="userComputerInfo"></p>
+	        <p class="newTime"></p>
+	        <p class="userBrowserInfo"></p>
+	        <p>引入css：&lt;link rel=&quot;stylesheet&quot; href=&quot;./ts.css&quot;/&gt;</p>
+	        <p>引入js：&lt;script type=&quot;text/javascript&quot; src=&quot;./t.lib.js&quot;&gt;&lt;/script&gt;</p>
+	        <p>引入js：&lt;script type=&quot;text/javascript&quot; src=&quot;./ts.js&quot;&gt;&lt;/script&gt;</p>
+	        <p>初始化：var ts = new TS()</p>
+	    </div>
+	    <!-- 页面-->
+	    <section id="page"></section>
+	</div>
+</div>
+
+<script type="text/javascript" src="utils/t.lib.js"></script>
+<script type="text/javascript" src="utils/ts.js"></script>
+
+<script type="text/javascript">
+	if(navigator.appName === "Microsoft Internet Explorer" && parseInt(navigator.appVersion.split(";")[1].replace(/[ ]/g, "").replace("MSIE","")) < 9){
+		alert("您的浏览器版本过低，请安装IE9或以上版本后打开本站");
+		window.location.href = 'https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads'
+	}
+	var content = document.querySelector("#page"), script
+	netTheme()
+	function netTheme() {
+		let color = '#05a6ff'
+		document.querySelector('body').style.setProperty('--color', color)
+		document.querySelectorAll('svg path').forEach(item => {
+			item.setAttribute('stroke', color)
+		})
+		tjs.bind(document.querySelector('svg'), 'click', function() {
+			window.scrollTo(0, document.documentElement.clientHeight)
+		})
+	}
+	
+	
+	
+	/*hash router*/
+	function Router() {
+		this.routes = {};
+		this.currentUrl = '';
+	}
+	function hashRouter() {
+		Router.prototype.route = function(path, callback) {
+			this.routes[path] = callback || function(){};
+		};
+		Router.prototype.refresh = function() {
+			this.currentUrl = location.hash.slice(1) || '/layout';
+			this.routes[this.currentUrl]();
+		};
+		Router.prototype.init = function() {
+			window.addEventListener('load', this.refresh.bind(this), false);
+			window.addEventListener('hashchange', this.refresh.bind(this), false);
+		}
+		window.Router = new Router();
+		window.Router.init();
+		Router.route('/layout', function() {
+			toUrl('./page/layout.html', location)
+		});
+		Router.route('/css', function() {
+			toUrl('./page/css.html', location)
+		});
+		Router.route('/components', function() {
+			toUrl('./page/components.html', location)
+		});
+	}
+	hashRouter()
+
+	/*h5 router*/
+	function h5Router() {
+		let lis = document.querySelectorAll(".nav>li"),
+			pages = {
+				index: {
+					title: "",
+					content: ''
+				},
+				about: {
+					title: "",
+					content: ""
+				},
+				products: {
+					title: "",
+					content: ""
+				},
+				contact: {
+					title: "",
+					content: ""
+				}
+			};
+		for(var i=0; i<lis.length; i++){
+			lis[i].onclick = function(){
+				var location = this.getAttribute("id");
+				if(location === "layout"){
+					// toUrl('http://localhost:63342/work/tw/admin/components/page/layout.html', location)
+				}
+				if(location === "css"){
+					// toUrl('http://localhost:63342/work/tw/admin/components/page/css.html', location)
+				}
+				if(location === "components"){
+					// toUrl('http://localhost:63342/work/tw/admin/components/page/components.html', location)
+				}
+			}
+		}
+		window.onpopstate = function(event) {
+			// var state = event.state;
+			// console.log(state);
+			// if(state != null){
+			//     content.innerHTML = state.content;
+			// }
+		};
+	}
+		
+    
+    /*路由跳转*/
+    function toUrl(url) {
+        tjs.ajax({
+			type: 'get',
+            url: url,
+            success: function (data) {
+                content.innerHTML = data // 渲染页面
+                for (var k = 0; k < document.querySelectorAll('#page h2').length; k++) {
+					// 设置侧边栏
+                    document.querySelector('aside>ul').innerHTML += '<li>' + (k+1) + '.' + document.querySelectorAll('#page h2')[k].innerHTML + '</li>'
+                }
+                
+				if(script){
+				    document.body.removeChild(script)
+				}
+                setTimeout(function () {
+                    addScript(`./js/index.js?id=${new Date().getTime()}`)
+                },100)
+                // 路由变化
+                window.addEventListener('hashchange',function(e) {
+                    // console.log(e)
+                    // console.log(e.oldURL);
+                    // console.log(e.newURL)
+                }, false);
+            }
+        })
+        // window.history.pushState(pages.index, "", location + '.html')
+    }
+    function addScript(src) {
+        script = document.createElement('script')
+        script.setAttribute("type", "text/javascript")
+        script.setAttribute("src", src)
+        document.body.appendChild(script)
+		// 展开代码
+		openCode()
+        // 代码高亮
+        var pre = document.querySelectorAll('pre code')
+        for (var i = 0; i < pre.length; i++) {
+            hljs.highlightBlock(pre[i]);
+        }
+    }
+    
+	
+	// 导航
+	function navigatorColor() {
+		if(!location.hash){
+		    tjs.addClass(document.querySelector('.layout'), 'color')
+		}else{
+		    tjs.addClass(document.querySelector('.' + location.hash.slice(2)), 'color')
+		}
+		var navLi = document.querySelectorAll('.nav>li')
+		for (var i = 0; i < navLi.length; i++) {
+		    navLi[i].querySelector('a').onclick = function () {
+		        if(!tjs.hasClass(this, 'color')){
+		            document.querySelector('aside>ul').innerHTML = ''
+		        }
+		        for (var j = 0; j < navLi.length; j++) {
+		            tjs.removeClass(navLi[j].querySelector('a'), 'color')
+		        }
+		        tjs.addClass(this, 'color')
+		
+		        // var asideItem = document.querySelectorAll('h2')
+		    }
+		}
+	}
+	navigatorColor()
+	
+	//展开代码
+	function openCode() {
+		var tCodeBtn = document.querySelectorAll('.my_icon'), tCode = document.querySelectorAll('.t-code');
+		for (var i = 0; i < tCodeBtn.length; i++) {
+		    (function (j) {
+		        tCodeBtn[j].onclick = function () {
+					this.style.transition = 'all .3s linear'
+		            if(parseInt(tjs.getStyle(tCode[j], 'height'))){
+		                tCode[j].style.height = 0
+		                tCode[j].style.marginTop = 0
+		                this.style.transform = 'rotate(0deg)'
+		            }else{
+		                funTransitionHeight(tCode[j])
+		                tCode[j].style.marginTop = 35 + 'px'
+						this.style.transform = 'rotate(180deg)'
+		            }
+		        }
+		    }(i))
+		}
+	}
+	
+	// 0 - auto height transition
+	// time, 数值，可缺省
+	function funTransitionHeight(element, time) { 
+	    // if (typeof window.getComputedStyle === "undefined") return;
+	    var height = tjs.getStyle(element, 'height');
+	    // element.style.transition = "none";
+	    element.style.height = "auto";
+	    var targetHeight = tjs.getStyle(element, 'height');
+	    element.style.height = height;
+	    element.offsetWidth = element.offsetWidth;
+	    if (time) element.style.transition = "height "+ time +"ms";
+	    element.style.height = targetHeight;
+	}
+	
+	// life倒计时
+	function backTimeLife() {
+		let timelife = [
+			{ title: "今日已经过去", endTitle: "小时", num: 0, percent: "0%" },
+			{ title: "这周已经过去", endTitle: "天", num: 0, percent: "0%" },
+			{ title: "本月已经过去", endTitle: "天", num: 0, percent: "0%" },
+			{ title: "今年已经过去", endTitle: "个月", num: 0, percent: "0%" },
+		];
+		
+		let nowDate = +new Date();
+		let todayStartDate = new Date(new Date().toLocaleDateString()).getTime();
+		let todayPassHours = (nowDate - todayStartDate) / 1000 / 60 / 60;
+		let todayPassHoursPercent = (todayPassHours / 24) * 100;
+		timelife[0].num = parseInt(todayPassHours);
+		timelife[0].percent = parseInt(todayPassHoursPercent) + "%";
+	
+	
+		let weeks = { 0: 7, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6 };
+		let weekDay = weeks[new Date().getDay()];
+		let weekDayPassPercent = (weekDay / 7) * 100;
+		timelife[1].num = parseInt(weekDay) - 1;
+		timelife[1].percent = parseInt(weekDayPassPercent) + "%";
+	
+	
+		let year = new Date().getFullYear();
+		let date = new Date().getDate();
+		let month = new Date().getMonth() + 1;
+		let monthAll = new Date(year, month, 0).getDate();
+		let monthPassPercent = (date / monthAll) * 100;
+		timelife[2].num = date - 1;
+		timelife[2].percent = parseInt(monthPassPercent) + "%";
+	
+	
+		let yearPass = (month / 12) * 100;
+		timelife[3].num = month - 1;
+		timelife[3].percent = parseInt(yearPass) + "%";
+		
+		let htmlStr = "";
+		timelife.forEach((item, index) => {
+		  htmlStr += `
+			<div class="item">
+				<div class="title">
+					${item.title}
+					<span class="text">${item.num}</span>
+					${item.endTitle}
+				</div>
+				<div class="progress">
+					<div class="progress-bar">
+						<div class="progress-bar-inner progress-bar-inner-${index}" style="width: ${item.percent}"></div>
+					</div>
+					<div class="progress-percentage">${item.percent}</div>
+				</div>
+			</div>`;
+		});
+		document.querySelector('.timelife').innerHTML = htmlStr;
+	}
+	backTimeLife()
+	
+	// 标签云
+	function tagCloud() {
+		const entries = []
+		const colors = [
+		    "#F8D800",
+		    "#0396FF",
+		    "#EA5455",
+		    "#7367F0",
+		    "#32CCBC",
+		    "#F6416C",
+		    "#28C76F",
+		    "#9F44D3",
+		    "#F55555",
+		    "#736EFE",
+		    "#E96D71",
+		    "#DE4313",
+		    "#D939CD",
+		    "#4C83FF",
+		    "#F072B6",
+		    "#C346C2",
+		    "#5961F9",
+		    "#FD6585",
+		    "#465EFB",
+		    "#FFC600",
+		    "#FA742B",
+		    "#5151E5",
+		    "#BB4E75",
+		    "#FF52E5",
+		    "#49C628",
+		    "#00EAFF",
+		    "#F067B4",
+		    "#F067B4",
+		    "#ff9a9e",
+		    "#00f2fe",
+		    "#4facfe",
+		    "#f093fb",
+		    "#6fa3ef",
+		    "#bc99c4",
+		    "#46c47c",
+		    "#f9bb3c",
+		    "#e8583d",
+		    "#f68e5f",
+		]
+		let arr = [    
+			{name: 'quasar', url: ''},
+			{name: 'weex', url: ''},
+			{name: 'taro', url: ''},
+			{name: 'rn', url: ''},
+			{name: 'flutter', url: ''},
+			{name: 'qiankun', url: ''},
+			{name: 'uniapp', url: ''},
+			{name: 'mpx', url: ''},
+			{name: 'kbone', url: ''},
+			{name: 'omi', url: ''},
+			{name: 'wepy', url: ''},
+			{name: 'mpvue', url: ''},
+		]
+		arr.forEach((item) => {
+		    entries.push({
+		      label: item.name,
+		      url: item.url,
+		      target: "_blank",
+		      fontColor: colors[tjs.getRandomNum(0, colors.length - 1)],
+		      fontSize: 15,
+		    });
+	    });
+		$('.tag-box').svg3DTagCloud({
+		    entries,
+		    width: 220,
+		    height: 220,
+		    radius: "65%",
+		    radiusMin: 75,
+		    bgDraw: false,
+		    fov: 800,
+		    speed: 0.5,
+		    fontWeight: 500,
+		});
+	}
+	tagCloud()
+	
+	// 来访信息ip地址
+	function getViewInfo() {
+		tjs.ajax({
+			type: 'get',
+			url: 'https://api.vvhan.com/api/visitor.info',
+			success: (res) => {
+				let result = JSON.parse(res)
+				console.log(result)
+				document.querySelector('.userComputerInfo').innerHTML = `${result.location} ${result.low}~${result.high} ${result.tq} ${result.fl} ${result.tip}`
+				document.querySelector('.userBrowserInfo').innerHTML = '浏览器：' + tjs.getBrowserInfo() + ' 操作系统：' + result.system
+			}
+		})
+	}
+	getViewInfo()
+	
+	let url = 'https://fc-mp-171bfa1e-0889-447b-a7ed-29ea005cc7c4.next.bspapp.com'
+	function getCloudData() {
+		tjs.ajax({
+			type: 'get',
+			url: url+ '/api/getArticleList',
+			success: (res) => {
+				// let result = JSON.parse(res)
+				console.log(res)
+				
+			}
+		})
+	}
+	// getCloudData()
+	
+	
+</script>
+
+</body>
+</html>

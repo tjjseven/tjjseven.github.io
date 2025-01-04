@@ -1,2321 +1,584 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="阿七博客" type="application/atom+xml" />
-
-
-
-
-
-
-<meta name="description" content="专注于前端开发技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="阿七博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="阿七博客">
-<meta property="og:description" content="专注于前端开发技术博客">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿七博客">
-<meta name="twitter:description" content="专注于前端开发技术博客">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-
-
-
-
-  <title>阿七博客</title>
-  
-
-
-
-
-
-
-
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">阿七博客</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <h1 class="site-subtitle" itemprop="description"></h1>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-            关于
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/wxkf/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tjjseven">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/tx.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿七博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/wxkf/" itemprop="url">微信公众号开发</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-21T14:33:24+08:00">
-                2019-02-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/wx/" itemprop="url" rel="index">
-                    <span itemprop="name">wx</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="验证开发者服务器"><a href="#验证开发者服务器" class="headerlink" title="验证开发者服务器"></a>验证开发者服务器</h4><p>1.微信服务器将发送GET请求到填写的服务器地址URL上</p>
-<p>2.获取微信服务器Get请求的参数 signature、timestamp、nonce、echostr</p>
-<p>3.将token、timestamp、nonce三个参数进行字典序排序</p>
-<p>4.将三个参数字符串拼接成一个字符串进行sha1加密</p>
-<p>5.开发者获得加密后的字符串可与signature对比，标识该请求来源于微信</p>
-<p>6.验证URL有效性成功后即接入生效，成为开发者。申请测试账号，成为开发者后，用户每次向公众号发送消息、或者产生自定义菜单、或产生微信支付订单等情况时，开发者填写的服务器配置URL将得到微信服务器推送过来的消息和事件，开发者可以依据自身业务逻辑进行响应</p>
-<p>7.根据appID 和 appSecret 获取开发者access_token(有效期7200)</p>
-<h4 id="使用微信内置API"><a href="#使用微信内置API" class="headerlink" title="使用微信内置API"></a>使用微信内置API</h4><p>1.根据access_token 获取jsapi_ticket(有效期7200)</p>
-<p>2.根据jsapi_ticket 生成 微信加密签名</p>
-<p>3.根据签名、APPID、生成签名的时间戳、生成签名的随机串 可以使用微信JSSDK</p>
-<h4 id="使用公众号功能"><a href="#使用公众号功能" class="headerlink" title="使用公众号功能"></a>使用公众号功能</h4><p>1.根据access_token 设置公众号测试号的自定义菜单,收发消息</p>
-<h4 id="获取用户信息"><a href="#获取用户信息" class="headerlink" title="获取用户信息"></a>获取用户信息</h4><p>1.根据开发者填写的服务器配置URL、APPID向用户发起页面跳转授权</p>
-<p>2.授权成功之后跳转到应用首页，url携带code.</p>
-<p>3.根据code、appID、appSecret、grant_type拿到access_token（授权token）和 openid</p>
-<p>4.根据access_token（授权token）和 openid 获取用户信息</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/install/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tjjseven">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/tx.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿七博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/install/" itemprop="url">各种软件项目工具安装统计</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-21T13:55:15+08:00">
-                2019-02-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="安装node服务器-官网下载msi无需配置环境变量-："><a href="#安装node服务器-官网下载msi无需配置环境变量-：" class="headerlink" title="安装node服务器 (官网下载msi无需配置环境变量)："></a>安装node服务器 (官网下载msi无需配置环境变量)：</h4><p>安装express生成器 npm install -g express-generator （无法安装时用npm cache clean -f 清理缓存）</p>
-<p>生成node项目目录 express myserver</p>
-<p>安装  supervisor 热加载</p>
-<p>运行  supervisor bin/www</p>
-<h4 id="安装mongodb数据库："><a href="#安装mongodb数据库：" class="headerlink" title="安装mongodb数据库："></a>安装mongodb数据库：</h4><p>配置mongodb环境变量 电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量-&gt;系统变量 便于在任何地方都能启动mongodb</p>
-<p>启动命令mongod –dbpath “d://mongodb//data”</p>
-<p>浏览器同步测试工具 npm install -g browser-sync</p>
-<h4 id="安装vue-cli2："><a href="#安装vue-cli2：" class="headerlink" title="安装vue-cli2："></a>安装vue-cli2：</h4><p>1 npm install -g vue-cli</p>
-<p>2 vue init webpack name</p>
-<h4 id="安装vue-cli3："><a href="#安装vue-cli3：" class="headerlink" title="安装vue-cli3："></a>安装vue-cli3：</h4><p>1 npm install -g @vue/cli</p>
-<p>2 vue create name</p>
-<p>查看一级npm 包 npm list –depth=0</p>
-<h4 id="用cli3安装cli2项目："><a href="#用cli3安装cli2项目：" class="headerlink" title="用cli3安装cli2项目："></a>用cli3安装cli2项目：</h4><p>1 npm install -g @vue/cli-init</p>
-<p>2 vue init webpack name</p>
-<h4 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h4><p>创建gitignore：Git Bash - touch .gitignore</p>
-<p>移动端测试：关闭本机PC防火墙 –&gt; 访问本机ip + 端口</p>
-<p>浏览器同步测试工具：npm install -g browser-sync</p>
-<p>Eclipse中svn设置提交时忽略某些文件夹和文件：</p>
-<pre><code>打开Window-&gt;Preferences-&gt;Team-&gt;Ignored Resources, 点击Add Pattern按钮，添加要忽略为文件或文件夹
-
-比如：要忽略bin文件夹，则添加模式*/bin/*;   忽略.classpath文件，则添加模式*.classpath.
-</code></pre><p>Eclipse 全局查找：CTRL + H</p>
-<p>Webstorm 快捷设置：</p>
-<pre><code>Webstorm 全局查找       CTRL + SHIFT + R
-
-取消updating indices    右键文件，选择 Mark Directory as -&gt; Excluded(排除)
-
-添加项目                Settings - Directories
-
-Tab快捷模板             Settings - Editor - Live Templates
-
-关联git版本控制         Settings - Version Control - Git/SVN
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/study-js/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tjjseven">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/tx.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿七博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/study-js/" itemprop="url">常见问题细节记录 - JS</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-20T17:50:29+08:00">
-                2019-02-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ol>
-<li><p>循环一个数组并将内容赋给另一个数组时，要将另一个数组定义在循环之外，不然每次循环都会为原来的数组</p>
-</li>
-<li><p>将自己取反，赋值给自己，可以实现反选功能</p>
-</li>
-<li><p>循环时，先将所有的元素设为默认的样式，然后设置当前元素的样式</p>
-</li>
-<li><p>执行事件响应函数时，如果要取消某元素的默认行为，例如a的跳转，直接return false即可</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/study-js/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/study_css/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tjjseven">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/tx.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿七博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/study_css/" itemprop="url">常见问题细节记录 - CSS</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-20T17:32:40+08:00">
-                2019-02-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ol>
-<li><p>visibility(能见度)【visitility/hidden】：隐藏元素，但是占据原来的位置；display(显示)【block/inline/none】:隐藏元素，不占据原来的位置</p>
-</li>
-<li><p>多个inline或inline-block标签换行写时之间会默认边距，设置flaot浮动</p>
-</li>
-<li><p>chrome最小字体设置：-webkit-transform-origin-x:0;-webkit-transform:scale(size/12)</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/study_css/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/ie/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tjjseven">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/tx.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿七博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/ie/" itemprop="url">IE兼容性</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T17:13:37+08:00">
-                2018-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ie/" itemprop="url" rel="index">
-                    <span itemprop="name">ie</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>IE input readonly 失效：</p>
-<pre><code>设置unselectable属性为on
-</code></pre></li>
-<li><p>IE8 input padding-left 失效</p>
-</li>
-<li><p>IE8 input placeholder 失效</p>
-</li>
-<li><p>IE8 背景色渐变 背景透明度 rgba及opacity 字体渐变</p>
-</li>
-<li><p>IE8 不支持background简写</p>
-</li>
-<li><p>IE6/7设置absolute偏移量不对</p>
-<pre><code>left top值不可省略
-</code></pre></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tjjseven">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/tx.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿七博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/hexo/" itemprop="url">hexo常用命令及迁移</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-07T17:02:30+08:00">
-                2018-05-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h4><pre><code>hexo g == hexo generate #生成
-
-hexo s == hexo server #启动服务预览
-
-hexo d == hexo deploy #部署
-
-hexo new &quot;postName&quot; #新建文章
-
-hexo new page &quot;pageName&quot; #新建页面
-</code></pre><h4 id="hexo迁移"><a href="#hexo迁移" class="headerlink" title="hexo迁移"></a>hexo迁移</h4><p><a href="https://www.zhihu.com/question/21193762" title="教程" target="_blank" rel="noopener">参考</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/cae/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tjjseven">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/tx.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿七博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/cae/" itemprop="url">伪类和伪元素</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-28T23:07:22+08:00">
-                2018-01-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>伪类用于向某些选择器添加特殊的效果；伪元素用于将特殊的效果添加到某些选择器。</p>
-<p>伪类有：:first-child ，:link:，visited，:hover，:active，:focus，:lang</p>
-<p>伪元素有：:first-line，:first-letter，:before，:after  </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/cae/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/usegit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tjjseven">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/tx.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿七博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/usegit/" itemprop="url">git使用指南及注意事项</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-21T04:12:39+08:00">
-                2017-12-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="克隆远程仓库并上传code："><a href="#克隆远程仓库并上传code：" class="headerlink" title="克隆远程仓库并上传code："></a>克隆远程仓库并上传code：</h4><pre><code>1. github创建仓库，本地安装git命令行工具TortoiseGit，新建文件并打开，右键执行git clone url[仓库地址]
-
-2. 使用SSH方式连接(若报错no supported authentication nethods available，提示身份验证)
-
-   解决方式：文件夹内右键选择TortoiseGit --&gt; Settings，在弹出的对话框中点击NetWork在右侧的区域配置
-
-   SSH Client项为Git安装目录下bin/ssh.exe文件
-
-3. 添加code到本地仓库文件(工作区),右键执行git bash打开TortoiseGit --&gt; git add -A(暂存区) --&gt; 
-
-   git commit -m &quot;提交信息&quot;(版本区) --&gt; git push origin master(远程主分支)(若使用HTTPS方式会提示输
-
-   入github用户名密码，使用SSH方式并在配置SSH key时可不输入用户名密码，则无提示) --&gt; push成功
-</code></pre>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/usegit/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/markdown/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tjjseven">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/tx.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿七博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/markdown/" itemprop="url">markdown</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-21T01:12:39+08:00">
-                2017-12-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">markdown</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>markdown常用语法总结</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/markdown/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/tx.png"
-                alt="tjjseven" />
-            
-              <p class="site-author-name" itemprop="name">tjjseven</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/tjjseven" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:tang95279@163.com" target="_blank" title="E-Mail">
-                    
-                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://plus.google.com" target="_blank" title="Google">
-                    
-                      <i class="fa fa-fw fa-google"></i>Google</a>
-                </span>
-              
-            
-          </div>
-
-          
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                友链
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://tseven.top/mysite/index.html" title="个人简介" target="_blank">个人简介</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="" title="摄影网站" target="_blank">摄影网站</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://tseven.top/mycomp/index.html" title="TSui" target="_blank">TSui</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-flag"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">前端技术</span>
-
-  
-</div>
-
-
-
-
-
-
-
-
-  <div class="footer-custom">Hosted by <a target="_self" href="http://tseven.top">tjjseven</a> | <a target="_blank" href="http://tseven.top/sitemap.xml">sitemap</a></div>
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="referrer" content="no-referrer" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>TS 导航</title>
+		<link rel="stylesheet" href="../utils/t.lib.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core">
+		<style>
+			body{
+				background: #e7f0ff;
+			}
+			.cursor{
+				cursor: pointer;
+			}
+			.padding{
+				padding: 50px;
+			}
+			/* 滚动条宽高 */
+			::-webkit-scrollbar {
+			    width: 0px;
+				height: 1px;
+			}
+			/* 滚动条滑块 */
+			::-webkit-scrollbar-thumb {
+			    border-radius: 10px;
+			    background: #ccc;
+			}
+			/* 滚动条轨道 */
+			::-webkit-scrollbar-track {
+			    
+			}
+			/* 滚动条两端按钮 */
+			::-webkit-scrollbar-button {
+				
+			}
+			
+			/* loading */
+			ul#loading{
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				display: none;
+			}
+			ul#loading li{
+				float: left;
+				position: relative;
+				margin-left: 10px;
+			}
+			ul#loading li:first-child{
+				margin-left: 0;
+			}
+			.running .ball{
+				/* background-color:#2187e7;
+				background-image:linear-gradient(90deg, #2187e7 25%, #a0eaff);*/
+				background-color: var(--color);
+				background-image: linear-gradient(90deg, var(--color));
+				width: 15px;
+				height: 15px;
+				border-radius: 50px;
+				transform: scale(0);
+				animation: loading 1s linear infinite;
+			}
+			.running .pulse{
+				width: 15px;
+				height: 15px;
+				border-radius: 30px;
+				/* border:1px solid #00c6ff; */
+				/* box-shadow:0 0 5px #00c6ff; */
+				border: 1px solid var(--color);
+				box-shadow: 0 0 5px var(--color);
+				position: absolute;
+				top: 0;
+				left: 0;
+				transform: scale(0);
+				animation: pulse 1s ease-out infinite;
+			}
+			#layer1{
+				animation-delay: 0.1s;
+			}
+			#layer2{
+				animation-delay: 0.2s;
+			}
+			#layer3{
+				animation-delay: 0.3s;
+			}
+			#layer4{
+				animation-delay: 0.4s;
+			}
+			#layer5{
+				animation-delay: 0.5s;
+			}
+			#layer6{
+				animation-delay: 0.2s;
+			}
+			#layer7{
+				animation-delay: 0.4s;
+			}
+			#layer8{
+				animation-delay: 0.6s;
+			}
+			#layer9{
+				animation-delay: 0.8s;
+			}
+			#layer10{
+				animation-delay: 1s;
+			}
+			@keyframes loading{
+				0%{
+					transform: scale(0, 0);
+				}
+				50%{
+					transform: scale(1, 1);
+				}	
+				100%{
+					transform: scale(0, 0);
+				}	
+			}
+			@keyframes pulse{
+				0%  {
+					transform: scale(0);
+					opacity: 0;
+				}
+			    10% {
+					transform: scale(1);
+					opacity: 0.5;
+				}
+				50% {
+					transform: scale(1.75);
+					opacity: 0;
+				}
+			    100%{
+					transform: scale(0);
+					opacity: 0;
+				}  
+			}
+			
+			* {
+			  margin: 0;
+			  padding: 0;
+			  box-sizing: border-box;
+			}
+			
+			.wrapper,
+			.content {
+			  position: relative;
+			  top: 0;
+			  width: 100%;
+			  z-index: 1;
+			}
+			.wrapper{
+				position: absolute;
+			}
+			.content {
+			  overflow-x: hidden;
+			}
+			
+			.content .section {
+			  width: 100%;
+			  height: 100vh;
+			}
+			
+			.content .section.page_banner {
+			  background-image: url(../bg.jpg);
+			  background-position: center center;
+			  background-repeat: no-repeat;
+			  background-size: cover;
+			  transform: initial !important;
+			  position: relative;
+			  margin-bottom: 50px;
+			}
+			.section.page_banner>div{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			.page_one ul{
+				display: flex;
+				flex-wrap: wrap;
+				width: 95%;
+				margin: 0 auto;
+			}
+			.page_one li{
+				--width: 30%;
+				--len: 3;
+				width: var(--width);
+				transition: all .3s;
+				border-radius: 10px;
+				margin: 0 calc((100% - var(--width) * var(--len)) / var(--len) / 2) 30px;
+				/* background: #e0e9f9; */
+				background: #fff;
+				border: 1px solid #e0e9f9;
+				cursor: pointer;
+				overflow: hidden;
+				/* box-shadow: 0 2px 5px #00000026; */
+			}
+			@media screen and (max-width: 1100px){
+				.page_one li{
+					--width: 45%;
+					--len: 2;
+				}
+			}
+			@media screen and (max-width: 660px){
+				.page_one li{
+					--len: 1;
+					--width: 90%;
+					margin-bottom: 35px;
+				}
+			}
+			.image-container {
+			  width: 100%;
+			  height: 100vh;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  right: 0;
+			  z-index: 2;
+			  perspective: 500px;
+			  overflow: hidden;
+			}
+			
+			.image-container img {
+			  width: 100%;
+			  height: 100%;
+			  object-fit: cover;
+			  object-position: center center;
+			}
+
+			/* 雪 */
+			.star {
+			  width: 100%;
+			  height: 100vh;
+			  /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
+			  overflow: hidden;
+			  position: fixed;
+			  z-index: 999;
+			}
+			
+			#stars {
+			  width: 1px;
+			  height: 1px;
+			  background: transparent;
+			  box-shadow: 100px 687px #FFF , 751px 415px #FFF , 1394px 310px #FFF , 245px 1290px #FFF , 1213px 1016px #FFF , 1368px 115px #FFF , 916px 769px #FFF , 911px 1153px #FFF , 83px 661px #FFF , 440px 1861px #FFF , 1164px 216px #FFF , 1206px 810px #FFF , 1466px 438px #FFF , 1627px 493px #FFF , 254px 1501px #FFF , 756px 1839px #FFF , 2px 393px #FFF , 1258px 780px #FFF , 594px 513px #FFF , 1794px 1710px #FFF , 790px 1085px #FFF , 1545px 435px #FFF , 1777px 152px #FFF , 1292px 1330px #FFF , 739px 186px #FFF , 964px 928px #FFF , 98px 79px #FFF , 498px 1608px #FFF , 254px 1948px #FFF , 797px 848px #FFF , 1025px 167px #FFF , 468px 1228px #FFF , 1940px 1804px #FFF , 1970px 334px #FFF , 1846px 520px #FFF , 131px 881px #FFF , 257px 1356px #FFF , 1974px 1575px #FFF , 1873px 1111px #FFF , 1084px 1169px #FFF , 421px 1089px #FFF , 50px 1320px #FFF , 1825px 155px #FFF , 188px 706px #FFF , 1526px 798px #FFF , 716px 205px #FFF , 120px 1178px #FFF , 1237px 1961px #FFF , 777px 386px #FFF , 1428px 616px #FFF , 831px 814px #FFF , 1013px 264px #FFF , 619px 250px #FFF , 1595px 383px #FFF , 1655px 531px #FFF , 1811px 1786px #FFF , 1845px 570px #FFF , 1391px 88px #FFF , 1560px 1149px #FFF , 21px 1137px #FFF , 1291px 1235px #FFF , 1294px 142px #FFF , 947px 1990px #FFF , 267px 36px #FFF , 520px 1640px #FFF , 298px 612px #FFF , 58px 117px #FFF , 1111px 1054px #FFF , 561px 964px #FFF , 1699px 241px #FFF , 683px 887px #FFF , 841px 739px #FFF , 88px 203px #FFF , 189px 1131px #FFF , 1353px 1164px #FFF , 1026px 581px #FFF , 717px 278px #FFF , 369px 797px #FFF , 184px 1161px #FFF , 5px 939px #FFF , 1375px 1108px #FFF , 783px 1527px #FFF , 153px 1557px #FFF , 1251px 1017px #FFF , 1938px 703px #FFF , 970px 792px #FFF , 884px 631px #FFF , 64px 247px #FFF , 1056px 483px #FFF , 959px 1164px #FFF , 1537px 900px #FFF , 1839px 714px #FFF , 1933px 716px #FFF , 340px 1018px #FFF , 1417px 790px #FFF , 1676px 1781px #FFF , 877px 863px #FFF , 157px 1742px #FFF , 831px 1516px #FFF , 101px 1768px #FFF , 1414px 1474px #FFF , 780px 1976px #FFF , 1398px 989px #FFF , 321px 901px #FFF , 508px 620px #FFF , 1564px 1024px #FFF , 79px 1919px #FFF , 661px 1310px #FFF , 816px 1241px #FFF , 1404px 156px #FFF , 347px 1181px #FFF , 1947px 1973px #FFF , 1182px 1346px #FFF , 361px 143px #FFF , 1368px 1141px #FFF , 1135px 544px #FFF , 338px 1989px #FFF , 600px 286px #FFF , 329px 20px #FFF , 1287px 1829px #FFF , 1947px 1902px #FFF , 521px 972px #FFF , 1050px 274px #FFF , 679px 366px #FFF , 1260px 809px #FFF , 1144px 1230px #FFF , 168px 1783px #FFF , 1546px 961px #FFF , 70px 400px #FFF , 1844px 815px #FFF , 1885px 1073px #FFF , 1178px 181px #FFF , 1187px 1865px #FFF , 12px 1077px #FFF , 633px 1208px #FFF , 205px 109px #FFF , 400px 497px #FFF , 1906px 1076px #FFF , 517px 441px #FFF , 372px 1321px #FFF , 821px 960px #FFF , 782px 973px #FFF , 347px 1488px #FFF , 389px 1234px #FFF , 1384px 1726px #FFF , 1506px 448px #FFF , 1987px 1375px #FFF , 101px 331px #FFF , 1109px 335px #FFF , 877px 1878px #FFF , 89px 265px #FFF , 1578px 1495px #FFF , 699px 1479px #FFF , 624px 1525px #FFF , 159px 1761px #FFF , 1052px 205px #FFF , 1718px 482px #FFF , 473px 527px #FFF , 1791px 1992px #FFF , 1632px 1783px #FFF , 1430px 628px #FFF , 853px 1510px #FFF , 405px 1896px #FFF , 1934px 1331px #FFF , 1141px 141px #FFF , 436px 626px #FFF , 295px 180px #FFF , 135px 1205px #FFF , 1387px 13px #FFF , 1030px 1281px #FFF , 1925px 1894px #FFF , 540px 636px #FFF , 1497px 276px #FFF , 1556px 299px #FFF , 339px 1028px #FFF , 634px 121px #FFF , 95px 497px #FFF , 925px 160px #FFF , 701px 829px #FFF , 1207px 1311px #FFF , 396px 1654px #FFF , 95px 213px #FFF , 1470px 143px #FFF , 1607px 604px #FFF , 1995px 499px #FFF , 1892px 1403px #FFF , 312px 161px #FFF , 584px 1661px #FFF , 595px 1096px #FFF , 1528px 771px #FFF , 1444px 66px #FFF , 679px 357px #FFF , 759px 912px #FFF , 929px 176px #FFF , 1110px 1136px #FFF , 711px 357px #FFF , 1820px 1211px #FFF , 41px 522px #FFF , 1437px 62px #FFF , 521px 926px #FFF , 757px 1244px #FFF , 1753px 1497px #FFF , 630px 1417px #FFF , 1717px 1154px #FFF , 252px 681px #FFF , 942px 1530px #FFF , 1894px 20px #FFF , 5px 1229px #FFF , 889px 1651px #FFF , 1804px 1548px #FFF , 1515px 1477px #FFF , 815px 1475px #FFF , 995px 180px #FFF , 7px 1188px #FFF , 1762px 1767px #FFF , 1215px 1993px #FFF , 970px 700px #FFF , 1455px 1991px #FFF , 797px 1734px #FFF , 1525px 1609px #FFF , 326px 1679px #FFF , 885px 906px #FFF , 1857px 1510px #FFF , 1061px 902px #FFF , 976px 537px #FFF , 614px 1684px #FFF , 1974px 661px #FFF , 798px 222px #FFF , 645px 816px #FFF , 164px 836px #FFF , 1418px 1312px #FFF , 89px 1239px #FFF , 827px 552px #FFF , 1508px 974px #FFF , 1401px 485px #FFF , 1228px 1481px #FFF , 174px 939px #FFF , 769px 771px #FFF , 787px 1234px #FFF , 908px 1662px #FFF , 1868px 958px #FFF , 1751px 1801px #FFF , 1281px 439px #FFF , 1975px 91px #FFF , 1597px 685px #FFF , 1728px 1548px #FFF , 821px 1250px #FFF , 822px 720px #FFF , 512px 1862px #FFF , 1352px 667px #FFF , 1117px 1502px #FFF , 1717px 1761px #FFF , 1081px 592px #FFF , 1985px 192px #FFF , 772px 944px #FFF , 352px 594px #FFF , 431px 704px #FFF , 191px 1017px #FFF , 252px 103px #FFF , 1881px 266px #FFF , 877px 403px #FFF , 1186px 719px #FFF , 815px 296px #FFF , 635px 766px #FFF , 694px 1387px #FFF , 1026px 1012px #FFF , 1644px 186px #FFF , 573px 814px #FFF , 990px 1192px #FFF , 914px 1621px #FFF , 1795px 1189px #FFF , 887px 1077px #FFF , 1114px 1463px #FFF , 641px 1715px #FFF , 465px 1112px #FFF , 926px 485px #FFF , 1517px 1100px #FFF , 586px 1189px #FFF , 181px 632px #FFF , 1501px 847px #FFF , 1360px 1942px #FFF , 890px 1486px #FFF , 1886px 1823px #FFF , 1896px 945px #FFF , 1407px 896px #FFF , 1865px 604px #FFF , 1393px 823px #FFF , 1677px 1221px #FFF , 353px 634px #FFF , 1461px 1789px #FFF , 1734px 224px #FFF , 233px 20px #FFF , 179px 1080px #FFF , 1199px 1106px #FFF , 594px 79px #FFF , 507px 124px #FFF , 366px 332px #FFF , 1613px 1350px #FFF , 767px 32px #FFF , 110px 610px #FFF , 1848px 1875px #FFF , 11px 91px #FFF , 61px 1669px #FFF , 132px 1780px #FFF , 670px 1771px #FFF , 285px 648px #FFF , 893px 1969px #FFF , 1200px 650px #FFF , 902px 553px #FFF , 112px 1376px #FFF , 431px 1898px #FFF , 1031px 512px #FFF , 1164px 1578px #FFF , 378px 1809px #FFF , 253px 800px #FFF , 461px 523px #FFF , 550px 815px #FFF , 1295px 1599px #FFF , 887px 108px #FFF , 399px 1349px #FFF , 1498px 604px #FFF , 1632px 738px #FFF , 1128px 1425px #FFF , 589px 1075px #FFF , 1645px 361px #FFF , 794px 1643px #FFF , 559px 54px #FFF , 415px 1410px #FFF , 1415px 491px #FFF , 972px 1062px #FFF , 1891px 199px #FFF , 1136px 1047px #FFF , 453px 988px #FFF , 539px 1652px #FFF , 1451px 408px #FFF , 265px 1370px #FFF , 330px 900px #FFF , 1550px 691px #FFF , 1368px 1812px #FFF , 158px 1115px #FFF , 1671px 1022px #FFF , 154px 315px #FFF , 1805px 912px #FFF , 1591px 1196px #FFF , 1694px 9px #FFF , 1285px 1306px #FFF , 1061px 1057px #FFF , 1477px 306px #FFF , 1633px 248px #FFF , 1668px 185px #FFF , 1194px 1637px #FFF , 240px 599px #FFF , 622px 1745px #FFF , 1639px 1212px #FFF , 596px 404px #FFF , 13px 1559px #FFF , 106px 1791px #FFF , 1534px 499px #FFF , 1698px 931px #FFF , 1156px 342px #FFF , 583px 349px #FFF , 1250px 821px #FFF , 761px 14px #FFF , 653px 1781px #FFF , 485px 13px #FFF , 373px 10px #FFF , 1241px 979px #FFF , 670px 830px #FFF , 1210px 988px #FFF , 811px 1642px #FFF , 1420px 1344px #FFF , 1845px 897px #FFF , 1727px 1211px #FFF , 1044px 1356px #FFF , 90px 1891px #FFF , 1808px 338px #FFF , 1958px 238px #FFF , 1486px 1790px #FFF , 1127px 25px #FFF , 1623px 745px #FFF , 498px 280px #FFF , 1101px 994px #FFF , 1207px 430px #FFF , 1433px 1860px #FFF , 460px 505px #FFF , 1926px 689px #FFF , 497px 352px #FFF , 1545px 421px #FFF , 422px 1437px #FFF , 1364px 1618px #FFF , 29px 572px #FFF , 1760px 1935px #FFF , 476px 1436px #FFF , 1192px 509px #FFF , 184px 932px #FFF , 750px 1519px #FFF , 959px 370px #FFF , 1986px 1930px #FFF , 1686px 12px #FFF , 1100px 690px #FFF , 1512px 1295px #FFF , 1799px 1846px #FFF , 1832px 169px #FFF , 990px 1432px #FFF , 1146px 1263px #FFF , 939px 1879px #FFF , 184px 863px #FFF , 1261px 929px #FFF , 1869px 1335px #FFF , 282px 1892px #FFF , 1737px 1929px #FFF , 666px 1466px #FFF , 904px 1560px #FFF , 282px 103px #FFF , 1029px 1440px #FFF , 773px 1559px #FFF , 1993px 1619px #FFF , 1528px 487px #FFF , 1796px 1854px #FFF , 163px 658px #FFF , 1229px 710px #FFF , 713px 1155px #FFF , 1743px 835px #FFF , 1674px 416px #FFF , 1944px 172px #FFF , 1570px 843px #FFF , 373px 165px #FFF , 923px 330px #FFF , 885px 512px #FFF , 1173px 756px #FFF , 1251px 832px #FFF , 993px 367px #FFF , 1871px 555px #FFF , 1405px 856px #FFF , 605px 1924px #FFF , 1698px 1683px #FFF , 606px 1082px #FFF , 687px 1673px #FFF , 397px 1269px #FFF , 1651px 1778px #FFF , 1104px 655px #FFF , 1417px 1186px #FFF , 1972px 1192px #FFF , 281px 1855px #FFF , 885px 1907px #FFF , 433px 262px #FFF , 1850px 724px #FFF , 1696px 1846px #FFF , 301px 1200px #FFF , 1664px 1399px #FFF , 1315px 1060px #FFF , 1032px 179px #FFF , 1911px 840px #FFF , 176px 1573px #FFF , 1475px 920px #FFF , 971px 1516px #FFF , 290px 1521px #FFF , 737px 848px #FFF , 1128px 1357px #FFF , 1098px 496px #FFF , 1003px 256px #FFF , 1126px 1053px #FFF , 911px 700px #FFF , 1764px 976px #FFF , 1846px 544px #FFF , 1076px 1347px #FFF , 794px 349px #FFF , 1006px 1247px #FFF , 1297px 1100px #FFF , 1103px 60px #FFF , 715px 312px #FFF , 768px 1148px #FFF , 1092px 1869px #FFF , 1633px 274px #FFF , 1306px 1581px #FFF , 195px 1255px #FFF , 1285px 1868px #FFF , 1262px 917px #FFF , 1522px 1398px #FFF , 1923px 1515px #FFF , 1269px 1592px #FFF , 1293px 1853px #FFF , 1064px 852px #FFF , 1123px 1245px #FFF , 1065px 1479px #FFF , 525px 1424px #FFF , 1363px 833px #FFF , 364px 1583px #FFF , 1460px 515px #FFF , 836px 150px #FFF , 398px 1467px #FFF , 131px 1793px #FFF , 1691px 1435px #FFF , 831px 339px #FFF , 1315px 411px #FFF , 243px 696px #FFF , 1055px 244px #FFF , 700px 1345px #FFF , 826px 1043px #FFF , 1527px 1348px #FFF , 190px 540px #FFF , 993px 94px #FFF , 453px 1253px #FFF , 1374px 435px #FFF , 501px 869px #FFF , 961px 52px #FFF , 1238px 54px #FFF , 354px 491px #FFF , 1389px 347px #FFF , 265px 676px #FFF , 380px 856px #FFF , 942px 166px #FFF , 735px 1124px #FFF , 352px 1192px #FFF , 128px 1832px #FFF , 366px 1047px #FFF , 1812px 937px #FFF , 1654px 656px #FFF , 932px 1095px #FFF , 489px 805px #FFF , 1704px 1325px #FFF , 1013px 155px #FFF , 1578px 154px #FFF , 373px 1170px #FFF , 115px 1543px #FFF , 1910px 1776px #FFF , 1175px 400px #FFF , 1818px 320px #FFF , 577px 849px #FFF , 206px 1115px #FFF , 205px 993px #FFF , 1863px 117px #FFF , 1209px 1528px #FFF , 1639px 1752px #FFF , 1212px 1927px #FFF , 1339px 1510px #FFF , 1071px 92px #FFF , 1143px 1373px #FFF , 415px 1454px #FFF , 1979px 1711px #FFF , 922px 379px #FFF , 1785px 101px #FFF , 1709px 579px #FFF , 300px 329px #FFF , 1360px 873px #FFF , 1644px 1845px #FFF , 732px 1969px #FFF , 1511px 355px #FFF , 1193px 1232px #FFF , 1926px 996px #FFF , 6px 181px #FFF , 543px 1309px #FFF , 1691px 595px #FFF , 1150px 1048px #FFF , 1795px 1235px #FFF , 66px 1308px #FFF , 1649px 158px #FFF , 97px 1390px #FFF , 220px 1128px #FFF , 1043px 744px #FFF , 815px 1560px #FFF , 820px 1805px #FFF , 183px 131px #FFF , 831px 1270px #FFF , 766px 1654px #FFF , 438px 339px #FFF , 1318px 521px #FFF , 1526px 729px #FFF , 1664px 594px #FFF , 1633px 485px #FFF , 1188px 307px #FFF , 463px 706px #FFF , 619px 1523px #FFF , 962px 1141px #FFF , 1854px 819px #FFF , 1475px 1388px #FFF , 114px 1690px #FFF , 779px 212px #FFF , 1702px 1441px #FFF , 952px 118px #FFF , 959px 562px #FFF , 586px 1654px #FFF , 951px 418px #FFF , 1479px 1435px #FFF , 346px 762px #FFF , 1568px 295px #FFF , 791px 114px #FFF , 231px 1134px #FFF , 985px 1728px #FFF , 801px 1592px #FFF , 1666px 1287px #FFF , 655px 1176px #FFF , 562px 1024px #FFF , 422px 368px #FFF , 1732px 1393px #FFF , 971px 1076px #FFF , 1670px 1019px #FFF , 591px 1999px #FFF , 1513px 1650px #FFF , 1634px 423px #FFF , 78px 396px #FFF , 96px 1254px #FFF , 100px 1274px #FFF , 752px 1886px #FFF , 1968px 1931px #FFF , 1735px 1747px #FFF , 1944px 1522px #FFF , 54px 1703px #FFF , 775px 1105px #FFF , 373px 192px #FFF , 132px 1865px #FFF , 593px 1777px #FFF , 40px 373px #FFF , 622px 1708px #FFF , 1646px 1007px #FFF , 567px 110px #FFF , 286px 90px #FFF , 412px 5px #FFF , 720px 1552px #FFF , 1435px 1056px #FFF , 1531px 1112px #FFF , 1009px 1569px #FFF , 311px 1341px #FFF , 993px 556px #FFF , 1542px 982px #FFF , 560px 935px #FFF , 770px 715px #FFF , 78px 1136px #FFF , 1795px 162px #FFF , 493px 295px #FFF , 910px 1664px #FFF , 1492px 666px #FFF , 423px 823px #FFF , 1421px 163px #FFF , 215px 784px #FFF , 1171px 1153px #FFF , 1503px 558px #FFF , 1182px 41px #FFF , 1360px 947px #FFF , 1051px 1416px #FFF , 1484px 395px #FFF , 661px 1129px #FFF , 1634px 1074px #FFF , 363px 1952px #FFF , 38px 1304px #FFF , 411px 214px #FFF , 932px 625px #FFF , 963px 1308px #FFF , 1283px 1890px #FFF , 653px 652px #FFF , 1904px 855px #FFF , 1160px 1078px #FFF , 275px 1751px #FFF , 2000px 1228px #FFF , 665px 1480px #FFF , 1880px 315px #FFF , 317px 1012px #FFF , 1563px 43px #FFF , 396px 1674px #FFF , 478px 1264px #FFF , 722px 679px #FFF , 1200px 1837px #FFF , 1403px 1881px #FFF , 899px 1237px #FFF , 590px 101px #FFF , 112px 1619px #FFF , 1046px 949px #FFF , 1270px 825px #FFF , 1321px 1302px #FFF , 417px 30px #FFF , 305px 118px #FFF , 843px 1019px #FFF , 728px 1780px #FFF , 1974px 1062px #FFF , 909px 916px #FFF , 1248px 212px #FFF , 1782px 1724px #FFF , 752px 234px #FFF , 1309px 335px #FFF , 642px 169px #FFF , 777px 1980px #FFF , 1396px 1621px #FFF , 955px 191px #FFF , 885px 1758px #FFF , 471px 305px #FFF , 1628px 1636px #FFF , 1045px 533px #FFF , 763px 854px #FFF , 597px 711px #FFF , 494px 1418px #FFF , 1366px 44px #FFF , 1658px 1753px #FFF , 1362px 143px #FFF , 624px 979px #FFF , 983px 803px #FFF , 1796px 1290px #FFF , 1270px 227px #FFF , 1708px 11px #FFF , 1306px 308px #FFF , 1898px 1847px #FFF;
+			  animation: animStar 7s linear infinite;
+			}
+			#stars:after {
+			  content: " ";
+			  position: absolute;
+			  top: 2000px;
+			  width: 1px;
+			  height: 1px;
+			  background: transparent;
+			  box-shadow: 100px 687px #FFF , 751px 415px #FFF , 1394px 310px #FFF , 245px 1290px #FFF , 1213px 1016px #FFF , 1368px 115px #FFF , 916px 769px #FFF , 911px 1153px #FFF , 83px 661px #FFF , 440px 1861px #FFF , 1164px 216px #FFF , 1206px 810px #FFF , 1466px 438px #FFF , 1627px 493px #FFF , 254px 1501px #FFF , 756px 1839px #FFF , 2px 393px #FFF , 1258px 780px #FFF , 594px 513px #FFF , 1794px 1710px #FFF , 790px 1085px #FFF , 1545px 435px #FFF , 1777px 152px #FFF , 1292px 1330px #FFF , 739px 186px #FFF , 964px 928px #FFF , 98px 79px #FFF , 498px 1608px #FFF , 254px 1948px #FFF , 797px 848px #FFF , 1025px 167px #FFF , 468px 1228px #FFF , 1940px 1804px #FFF , 1970px 334px #FFF , 1846px 520px #FFF , 131px 881px #FFF , 257px 1356px #FFF , 1974px 1575px #FFF , 1873px 1111px #FFF , 1084px 1169px #FFF , 421px 1089px #FFF , 50px 1320px #FFF , 1825px 155px #FFF , 188px 706px #FFF , 1526px 798px #FFF , 716px 205px #FFF , 120px 1178px #FFF , 1237px 1961px #FFF , 777px 386px #FFF , 1428px 616px #FFF , 831px 814px #FFF , 1013px 264px #FFF , 619px 250px #FFF , 1595px 383px #FFF , 1655px 531px #FFF , 1811px 1786px #FFF , 1845px 570px #FFF , 1391px 88px #FFF , 1560px 1149px #FFF , 21px 1137px #FFF , 1291px 1235px #FFF , 1294px 142px #FFF , 947px 1990px #FFF , 267px 36px #FFF , 520px 1640px #FFF , 298px 612px #FFF , 58px 117px #FFF , 1111px 1054px #FFF , 561px 964px #FFF , 1699px 241px #FFF , 683px 887px #FFF , 841px 739px #FFF , 88px 203px #FFF , 189px 1131px #FFF , 1353px 1164px #FFF , 1026px 581px #FFF , 717px 278px #FFF , 369px 797px #FFF , 184px 1161px #FFF , 5px 939px #FFF , 1375px 1108px #FFF , 783px 1527px #FFF , 153px 1557px #FFF , 1251px 1017px #FFF , 1938px 703px #FFF , 970px 792px #FFF , 884px 631px #FFF , 64px 247px #FFF , 1056px 483px #FFF , 959px 1164px #FFF , 1537px 900px #FFF , 1839px 714px #FFF , 1933px 716px #FFF , 340px 1018px #FFF , 1417px 790px #FFF , 1676px 1781px #FFF , 877px 863px #FFF , 157px 1742px #FFF , 831px 1516px #FFF , 101px 1768px #FFF , 1414px 1474px #FFF , 780px 1976px #FFF , 1398px 989px #FFF , 321px 901px #FFF , 508px 620px #FFF , 1564px 1024px #FFF , 79px 1919px #FFF , 661px 1310px #FFF , 816px 1241px #FFF , 1404px 156px #FFF , 347px 1181px #FFF , 1947px 1973px #FFF , 1182px 1346px #FFF , 361px 143px #FFF , 1368px 1141px #FFF , 1135px 544px #FFF , 338px 1989px #FFF , 600px 286px #FFF , 329px 20px #FFF , 1287px 1829px #FFF , 1947px 1902px #FFF , 521px 972px #FFF , 1050px 274px #FFF , 679px 366px #FFF , 1260px 809px #FFF , 1144px 1230px #FFF , 168px 1783px #FFF , 1546px 961px #FFF , 70px 400px #FFF , 1844px 815px #FFF , 1885px 1073px #FFF , 1178px 181px #FFF , 1187px 1865px #FFF , 12px 1077px #FFF , 633px 1208px #FFF , 205px 109px #FFF , 400px 497px #FFF , 1906px 1076px #FFF , 517px 441px #FFF , 372px 1321px #FFF , 821px 960px #FFF , 782px 973px #FFF , 347px 1488px #FFF , 389px 1234px #FFF , 1384px 1726px #FFF , 1506px 448px #FFF , 1987px 1375px #FFF , 101px 331px #FFF , 1109px 335px #FFF , 877px 1878px #FFF , 89px 265px #FFF , 1578px 1495px #FFF , 699px 1479px #FFF , 624px 1525px #FFF , 159px 1761px #FFF , 1052px 205px #FFF , 1718px 482px #FFF , 473px 527px #FFF , 1791px 1992px #FFF , 1632px 1783px #FFF , 1430px 628px #FFF , 853px 1510px #FFF , 405px 1896px #FFF , 1934px 1331px #FFF , 1141px 141px #FFF , 436px 626px #FFF , 295px 180px #FFF , 135px 1205px #FFF , 1387px 13px #FFF , 1030px 1281px #FFF , 1925px 1894px #FFF , 540px 636px #FFF , 1497px 276px #FFF , 1556px 299px #FFF , 339px 1028px #FFF , 634px 121px #FFF , 95px 497px #FFF , 925px 160px #FFF , 701px 829px #FFF , 1207px 1311px #FFF , 396px 1654px #FFF , 95px 213px #FFF , 1470px 143px #FFF , 1607px 604px #FFF , 1995px 499px #FFF , 1892px 1403px #FFF , 312px 161px #FFF , 584px 1661px #FFF , 595px 1096px #FFF , 1528px 771px #FFF , 1444px 66px #FFF , 679px 357px #FFF , 759px 912px #FFF , 929px 176px #FFF , 1110px 1136px #FFF , 711px 357px #FFF , 1820px 1211px #FFF , 41px 522px #FFF , 1437px 62px #FFF , 521px 926px #FFF , 757px 1244px #FFF , 1753px 1497px #FFF , 630px 1417px #FFF , 1717px 1154px #FFF , 252px 681px #FFF , 942px 1530px #FFF , 1894px 20px #FFF , 5px 1229px #FFF , 889px 1651px #FFF , 1804px 1548px #FFF , 1515px 1477px #FFF , 815px 1475px #FFF , 995px 180px #FFF , 7px 1188px #FFF , 1762px 1767px #FFF , 1215px 1993px #FFF , 970px 700px #FFF , 1455px 1991px #FFF , 797px 1734px #FFF , 1525px 1609px #FFF , 326px 1679px #FFF , 885px 906px #FFF , 1857px 1510px #FFF , 1061px 902px #FFF , 976px 537px #FFF , 614px 1684px #FFF , 1974px 661px #FFF , 798px 222px #FFF , 645px 816px #FFF , 164px 836px #FFF , 1418px 1312px #FFF , 89px 1239px #FFF , 827px 552px #FFF , 1508px 974px #FFF , 1401px 485px #FFF , 1228px 1481px #FFF , 174px 939px #FFF , 769px 771px #FFF , 787px 1234px #FFF , 908px 1662px #FFF , 1868px 958px #FFF , 1751px 1801px #FFF , 1281px 439px #FFF , 1975px 91px #FFF , 1597px 685px #FFF , 1728px 1548px #FFF , 821px 1250px #FFF , 822px 720px #FFF , 512px 1862px #FFF , 1352px 667px #FFF , 1117px 1502px #FFF , 1717px 1761px #FFF , 1081px 592px #FFF , 1985px 192px #FFF , 772px 944px #FFF , 352px 594px #FFF , 431px 704px #FFF , 191px 1017px #FFF , 252px 103px #FFF , 1881px 266px #FFF , 877px 403px #FFF , 1186px 719px #FFF , 815px 296px #FFF , 635px 766px #FFF , 694px 1387px #FFF , 1026px 1012px #FFF , 1644px 186px #FFF , 573px 814px #FFF , 990px 1192px #FFF , 914px 1621px #FFF , 1795px 1189px #FFF , 887px 1077px #FFF , 1114px 1463px #FFF , 641px 1715px #FFF , 465px 1112px #FFF , 926px 485px #FFF , 1517px 1100px #FFF , 586px 1189px #FFF , 181px 632px #FFF , 1501px 847px #FFF , 1360px 1942px #FFF , 890px 1486px #FFF , 1886px 1823px #FFF , 1896px 945px #FFF , 1407px 896px #FFF , 1865px 604px #FFF , 1393px 823px #FFF , 1677px 1221px #FFF , 353px 634px #FFF , 1461px 1789px #FFF , 1734px 224px #FFF , 233px 20px #FFF , 179px 1080px #FFF , 1199px 1106px #FFF , 594px 79px #FFF , 507px 124px #FFF , 366px 332px #FFF , 1613px 1350px #FFF , 767px 32px #FFF , 110px 610px #FFF , 1848px 1875px #FFF , 11px 91px #FFF , 61px 1669px #FFF , 132px 1780px #FFF , 670px 1771px #FFF , 285px 648px #FFF , 893px 1969px #FFF , 1200px 650px #FFF , 902px 553px #FFF , 112px 1376px #FFF , 431px 1898px #FFF , 1031px 512px #FFF , 1164px 1578px #FFF , 378px 1809px #FFF , 253px 800px #FFF , 461px 523px #FFF , 550px 815px #FFF , 1295px 1599px #FFF , 887px 108px #FFF , 399px 1349px #FFF , 1498px 604px #FFF , 1632px 738px #FFF , 1128px 1425px #FFF , 589px 1075px #FFF , 1645px 361px #FFF , 794px 1643px #FFF , 559px 54px #FFF , 415px 1410px #FFF , 1415px 491px #FFF , 972px 1062px #FFF , 1891px 199px #FFF , 1136px 1047px #FFF , 453px 988px #FFF , 539px 1652px #FFF , 1451px 408px #FFF , 265px 1370px #FFF , 330px 900px #FFF , 1550px 691px #FFF , 1368px 1812px #FFF , 158px 1115px #FFF , 1671px 1022px #FFF , 154px 315px #FFF , 1805px 912px #FFF , 1591px 1196px #FFF , 1694px 9px #FFF , 1285px 1306px #FFF , 1061px 1057px #FFF , 1477px 306px #FFF , 1633px 248px #FFF , 1668px 185px #FFF , 1194px 1637px #FFF , 240px 599px #FFF , 622px 1745px #FFF , 1639px 1212px #FFF , 596px 404px #FFF , 13px 1559px #FFF , 106px 1791px #FFF , 1534px 499px #FFF , 1698px 931px #FFF , 1156px 342px #FFF , 583px 349px #FFF , 1250px 821px #FFF , 761px 14px #FFF , 653px 1781px #FFF , 485px 13px #FFF , 373px 10px #FFF , 1241px 979px #FFF , 670px 830px #FFF , 1210px 988px #FFF , 811px 1642px #FFF , 1420px 1344px #FFF , 1845px 897px #FFF , 1727px 1211px #FFF , 1044px 1356px #FFF , 90px 1891px #FFF , 1808px 338px #FFF , 1958px 238px #FFF , 1486px 1790px #FFF , 1127px 25px #FFF , 1623px 745px #FFF , 498px 280px #FFF , 1101px 994px #FFF , 1207px 430px #FFF , 1433px 1860px #FFF , 460px 505px #FFF , 1926px 689px #FFF , 497px 352px #FFF , 1545px 421px #FFF , 422px 1437px #FFF , 1364px 1618px #FFF , 29px 572px #FFF , 1760px 1935px #FFF , 476px 1436px #FFF , 1192px 509px #FFF , 184px 932px #FFF , 750px 1519px #FFF , 959px 370px #FFF , 1986px 1930px #FFF , 1686px 12px #FFF , 1100px 690px #FFF , 1512px 1295px #FFF , 1799px 1846px #FFF , 1832px 169px #FFF , 990px 1432px #FFF , 1146px 1263px #FFF , 939px 1879px #FFF , 184px 863px #FFF , 1261px 929px #FFF , 1869px 1335px #FFF , 282px 1892px #FFF , 1737px 1929px #FFF , 666px 1466px #FFF , 904px 1560px #FFF , 282px 103px #FFF , 1029px 1440px #FFF , 773px 1559px #FFF , 1993px 1619px #FFF , 1528px 487px #FFF , 1796px 1854px #FFF , 163px 658px #FFF , 1229px 710px #FFF , 713px 1155px #FFF , 1743px 835px #FFF , 1674px 416px #FFF , 1944px 172px #FFF , 1570px 843px #FFF , 373px 165px #FFF , 923px 330px #FFF , 885px 512px #FFF , 1173px 756px #FFF , 1251px 832px #FFF , 993px 367px #FFF , 1871px 555px #FFF , 1405px 856px #FFF , 605px 1924px #FFF , 1698px 1683px #FFF , 606px 1082px #FFF , 687px 1673px #FFF , 397px 1269px #FFF , 1651px 1778px #FFF , 1104px 655px #FFF , 1417px 1186px #FFF , 1972px 1192px #FFF , 281px 1855px #FFF , 885px 1907px #FFF , 433px 262px #FFF , 1850px 724px #FFF , 1696px 1846px #FFF , 301px 1200px #FFF , 1664px 1399px #FFF , 1315px 1060px #FFF , 1032px 179px #FFF , 1911px 840px #FFF , 176px 1573px #FFF , 1475px 920px #FFF , 971px 1516px #FFF , 290px 1521px #FFF , 737px 848px #FFF , 1128px 1357px #FFF , 1098px 496px #FFF , 1003px 256px #FFF , 1126px 1053px #FFF , 911px 700px #FFF , 1764px 976px #FFF , 1846px 544px #FFF , 1076px 1347px #FFF , 794px 349px #FFF , 1006px 1247px #FFF , 1297px 1100px #FFF , 1103px 60px #FFF , 715px 312px #FFF , 768px 1148px #FFF , 1092px 1869px #FFF , 1633px 274px #FFF , 1306px 1581px #FFF , 195px 1255px #FFF , 1285px 1868px #FFF , 1262px 917px #FFF , 1522px 1398px #FFF , 1923px 1515px #FFF , 1269px 1592px #FFF , 1293px 1853px #FFF , 1064px 852px #FFF , 1123px 1245px #FFF , 1065px 1479px #FFF , 525px 1424px #FFF , 1363px 833px #FFF , 364px 1583px #FFF , 1460px 515px #FFF , 836px 150px #FFF , 398px 1467px #FFF , 131px 1793px #FFF , 1691px 1435px #FFF , 831px 339px #FFF , 1315px 411px #FFF , 243px 696px #FFF , 1055px 244px #FFF , 700px 1345px #FFF , 826px 1043px #FFF , 1527px 1348px #FFF , 190px 540px #FFF , 993px 94px #FFF , 453px 1253px #FFF , 1374px 435px #FFF , 501px 869px #FFF , 961px 52px #FFF , 1238px 54px #FFF , 354px 491px #FFF , 1389px 347px #FFF , 265px 676px #FFF , 380px 856px #FFF , 942px 166px #FFF , 735px 1124px #FFF , 352px 1192px #FFF , 128px 1832px #FFF , 366px 1047px #FFF , 1812px 937px #FFF , 1654px 656px #FFF , 932px 1095px #FFF , 489px 805px #FFF , 1704px 1325px #FFF , 1013px 155px #FFF , 1578px 154px #FFF , 373px 1170px #FFF , 115px 1543px #FFF , 1910px 1776px #FFF , 1175px 400px #FFF , 1818px 320px #FFF , 577px 849px #FFF , 206px 1115px #FFF , 205px 993px #FFF , 1863px 117px #FFF , 1209px 1528px #FFF , 1639px 1752px #FFF , 1212px 1927px #FFF , 1339px 1510px #FFF , 1071px 92px #FFF , 1143px 1373px #FFF , 415px 1454px #FFF , 1979px 1711px #FFF , 922px 379px #FFF , 1785px 101px #FFF , 1709px 579px #FFF , 300px 329px #FFF , 1360px 873px #FFF , 1644px 1845px #FFF , 732px 1969px #FFF , 1511px 355px #FFF , 1193px 1232px #FFF , 1926px 996px #FFF , 6px 181px #FFF , 543px 1309px #FFF , 1691px 595px #FFF , 1150px 1048px #FFF , 1795px 1235px #FFF , 66px 1308px #FFF , 1649px 158px #FFF , 97px 1390px #FFF , 220px 1128px #FFF , 1043px 744px #FFF , 815px 1560px #FFF , 820px 1805px #FFF , 183px 131px #FFF , 831px 1270px #FFF , 766px 1654px #FFF , 438px 339px #FFF , 1318px 521px #FFF , 1526px 729px #FFF , 1664px 594px #FFF , 1633px 485px #FFF , 1188px 307px #FFF , 463px 706px #FFF , 619px 1523px #FFF , 962px 1141px #FFF , 1854px 819px #FFF , 1475px 1388px #FFF , 114px 1690px #FFF , 779px 212px #FFF , 1702px 1441px #FFF , 952px 118px #FFF , 959px 562px #FFF , 586px 1654px #FFF , 951px 418px #FFF , 1479px 1435px #FFF , 346px 762px #FFF , 1568px 295px #FFF , 791px 114px #FFF , 231px 1134px #FFF , 985px 1728px #FFF , 801px 1592px #FFF , 1666px 1287px #FFF , 655px 1176px #FFF , 562px 1024px #FFF , 422px 368px #FFF , 1732px 1393px #FFF , 971px 1076px #FFF , 1670px 1019px #FFF , 591px 1999px #FFF , 1513px 1650px #FFF , 1634px 423px #FFF , 78px 396px #FFF , 96px 1254px #FFF , 100px 1274px #FFF , 752px 1886px #FFF , 1968px 1931px #FFF , 1735px 1747px #FFF , 1944px 1522px #FFF , 54px 1703px #FFF , 775px 1105px #FFF , 373px 192px #FFF , 132px 1865px #FFF , 593px 1777px #FFF , 40px 373px #FFF , 622px 1708px #FFF , 1646px 1007px #FFF , 567px 110px #FFF , 286px 90px #FFF , 412px 5px #FFF , 720px 1552px #FFF , 1435px 1056px #FFF , 1531px 1112px #FFF , 1009px 1569px #FFF , 311px 1341px #FFF , 993px 556px #FFF , 1542px 982px #FFF , 560px 935px #FFF , 770px 715px #FFF , 78px 1136px #FFF , 1795px 162px #FFF , 493px 295px #FFF , 910px 1664px #FFF , 1492px 666px #FFF , 423px 823px #FFF , 1421px 163px #FFF , 215px 784px #FFF , 1171px 1153px #FFF , 1503px 558px #FFF , 1182px 41px #FFF , 1360px 947px #FFF , 1051px 1416px #FFF , 1484px 395px #FFF , 661px 1129px #FFF , 1634px 1074px #FFF , 363px 1952px #FFF , 38px 1304px #FFF , 411px 214px #FFF , 932px 625px #FFF , 963px 1308px #FFF , 1283px 1890px #FFF , 653px 652px #FFF , 1904px 855px #FFF , 1160px 1078px #FFF , 275px 1751px #FFF , 2000px 1228px #FFF , 665px 1480px #FFF , 1880px 315px #FFF , 317px 1012px #FFF , 1563px 43px #FFF , 396px 1674px #FFF , 478px 1264px #FFF , 722px 679px #FFF , 1200px 1837px #FFF , 1403px 1881px #FFF , 899px 1237px #FFF , 590px 101px #FFF , 112px 1619px #FFF , 1046px 949px #FFF , 1270px 825px #FFF , 1321px 1302px #FFF , 417px 30px #FFF , 305px 118px #FFF , 843px 1019px #FFF , 728px 1780px #FFF , 1974px 1062px #FFF , 909px 916px #FFF , 1248px 212px #FFF , 1782px 1724px #FFF , 752px 234px #FFF , 1309px 335px #FFF , 642px 169px #FFF , 777px 1980px #FFF , 1396px 1621px #FFF , 955px 191px #FFF , 885px 1758px #FFF , 471px 305px #FFF , 1628px 1636px #FFF , 1045px 533px #FFF , 763px 854px #FFF , 597px 711px #FFF , 494px 1418px #FFF , 1366px 44px #FFF , 1658px 1753px #FFF , 1362px 143px #FFF , 624px 979px #FFF , 983px 803px #FFF , 1796px 1290px #FFF , 1270px 227px #FFF , 1708px 11px #FFF , 1306px 308px #FFF , 1898px 1847px #FFF;
+			}
+			
+			#stars2 {
+			  width: 2px;
+			  height: 2px;
+			  background: transparent;
+			  box-shadow: 1906px 1170px #FFF , 1966px 1995px #FFF , 291px 630px #FFF , 1667px 603px #FFF , 1999px 226px #FFF , 382px 1990px #FFF , 1022px 1078px #FFF , 1408px 1099px #FFF , 437px 1253px #FFF , 104px 74px #FFF , 917px 21px #FFF , 394px 1283px #FFF , 910px 755px #FFF , 1990px 9px #FFF , 1903px 327px #FFF , 212px 269px #FFF , 1348px 1670px #FFF , 399px 99px #FFF , 1708px 1793px #FFF , 1871px 866px #FFF , 353px 1890px #FFF , 80px 746px #FFF , 1398px 1111px #FFF , 22px 1026px #FFF , 1022px 220px #FFF , 191px 1894px #FFF , 250px 663px #FFF , 502px 1407px #FFF , 878px 1637px #FFF , 1155px 1955px #FFF , 1957px 132px #FFF , 706px 448px #FFF , 1123px 1144px #FFF , 574px 474px #FFF , 531px 1079px #FFF , 456px 39px #FFF , 1369px 1820px #FFF , 711px 411px #FFF , 1662px 517px #FFF , 1648px 1272px #FFF , 1915px 1854px #FFF , 44px 329px #FFF , 948px 1559px #FFF , 393px 454px #FFF , 1980px 1903px #FFF , 73px 1992px #FFF , 1594px 13px #FFF , 409px 843px #FFF , 1542px 869px #FFF , 219px 130px #FFF , 606px 1329px #FFF , 1289px 230px #FFF , 136px 1714px #FFF , 1610px 269px #FFF , 1230px 1646px #FFF , 394px 54px #FFF , 1311px 832px #FFF , 1567px 1122px #FFF , 1619px 1313px #FFF , 531px 1886px #FFF , 912px 1129px #FFF , 1927px 1981px #FFF , 1145px 1933px #FFF , 1980px 1142px #FFF , 1042px 126px #FFF , 1159px 244px #FFF , 342px 1375px #FFF , 1240px 800px #FFF , 1192px 148px #FFF , 813px 1084px #FFF , 502px 1966px #FFF , 251px 565px #FFF , 1282px 959px #FFF , 577px 196px #FFF , 850px 997px #FFF , 46px 1278px #FFF , 593px 110px #FFF , 319px 821px #FFF , 1916px 64px #FFF , 1762px 1033px #FFF , 1697px 993px #FFF , 1869px 774px #FFF , 1638px 88px #FFF , 906px 1405px #FFF , 1232px 1272px #FFF , 246px 1250px #FFF , 1191px 304px #FFF , 692px 1840px #FFF , 1181px 1859px #FFF , 1937px 1752px #FFF , 250px 269px #FFF , 119px 1143px #FFF , 1120px 1446px #FFF , 1576px 240px #FFF , 838px 1585px #FFF , 1627px 753px #FFF , 511px 323px #FFF , 259px 1067px #FFF , 1508px 70px #FFF , 268px 1511px #FFF , 604px 233px #FFF , 1769px 1525px #FFF , 1744px 337px #FFF , 1440px 741px #FFF , 94px 1514px #FFF , 927px 1377px #FFF , 1649px 629px #FFF , 1751px 531px #FFF , 788px 1403px #FFF , 1278px 1834px #FFF , 1353px 1543px #FFF , 1401px 517px #FFF , 299px 1102px #FFF , 319px 387px #FFF , 102px 1096px #FFF , 1846px 314px #FFF , 1883px 351px #FFF , 336px 1565px #FFF , 1562px 974px #FFF , 1337px 95px #FFF , 361px 1585px #FFF , 20px 78px #FFF , 1482px 889px #FFF , 332px 1390px #FFF , 615px 454px #FFF , 1910px 1694px #FFF , 1480px 243px #FFF , 1454px 180px #FFF , 999px 655px #FFF , 1295px 1473px #FFF , 1279px 1845px #FFF , 1251px 454px #FFF , 609px 34px #FFF , 896px 1351px #FFF , 854px 1608px #FFF , 1884px 516px #FFF , 836px 859px #FFF , 1252px 837px #FFF , 1735px 961px #FFF , 999px 752px #FFF , 138px 1867px #FFF , 1658px 410px #FFF , 1240px 1807px #FFF , 493px 1875px #FFF , 402px 1629px #FFF , 1804px 1681px #FFF , 1143px 899px #FFF , 1343px 1744px #FFF , 1925px 1276px #FFF , 1640px 20px #FFF , 1192px 1826px #FFF , 291px 483px #FFF , 1716px 582px #FFF , 241px 1450px #FFF , 1839px 1561px #FFF , 1317px 1407px #FFF , 1857px 1846px #FFF , 591px 977px #FFF , 229px 1793px #FFF , 1032px 1843px #FFF , 314px 306px #FFF , 705px 1642px #FFF , 1729px 641px #FFF , 1680px 1145px #FFF , 304px 806px #FFF , 662px 82px #FFF , 63px 1124px #FFF , 1910px 1603px #FFF , 605px 1851px #FFF , 1475px 1987px #FFF , 1755px 564px #FFF , 1298px 84px #FFF , 551px 68px #FFF , 302px 1112px #FFF , 1513px 1995px #FFF , 1091px 1711px #FFF , 1503px 172px #FFF , 1421px 1476px #FFF , 887px 616px #FFF , 1573px 300px #FFF , 1265px 1422px #FFF , 1969px 1296px #FFF , 927px 1893px #FFF , 1199px 390px #FFF , 308px 1692px #FFF , 891px 146px #FFF , 1663px 470px #FFF , 398px 921px #FFF , 1840px 1402px #FFF , 609px 736px #FFF , 705px 1425px #FFF , 861px 726px #FFF , 1187px 187px #FFF , 16px 828px #FFF , 937px 1740px #FFF , 4px 788px #FFF , 1189px 501px #FFF , 1766px 388px #FFF , 1000px 1566px #FFF , 765px 1009px #FFF;
+			  animation: animStar 10s linear infinite;
+			}
+			#stars2:after {
+			  content: " ";
+			  position: absolute;
+			  top: 2000px;
+			  width: 2px;
+			  height: 2px;
+			  background: transparent;
+			  box-shadow: 1906px 1170px #FFF , 1966px 1995px #FFF , 291px 630px #FFF , 1667px 603px #FFF , 1999px 226px #FFF , 382px 1990px #FFF , 1022px 1078px #FFF , 1408px 1099px #FFF , 437px 1253px #FFF , 104px 74px #FFF , 917px 21px #FFF , 394px 1283px #FFF , 910px 755px #FFF , 1990px 9px #FFF , 1903px 327px #FFF , 212px 269px #FFF , 1348px 1670px #FFF , 399px 99px #FFF , 1708px 1793px #FFF , 1871px 866px #FFF , 353px 1890px #FFF , 80px 746px #FFF , 1398px 1111px #FFF , 22px 1026px #FFF , 1022px 220px #FFF , 191px 1894px #FFF , 250px 663px #FFF , 502px 1407px #FFF , 878px 1637px #FFF , 1155px 1955px #FFF , 1957px 132px #FFF , 706px 448px #FFF , 1123px 1144px #FFF , 574px 474px #FFF , 531px 1079px #FFF , 456px 39px #FFF , 1369px 1820px #FFF , 711px 411px #FFF , 1662px 517px #FFF , 1648px 1272px #FFF , 1915px 1854px #FFF , 44px 329px #FFF , 948px 1559px #FFF , 393px 454px #FFF , 1980px 1903px #FFF , 73px 1992px #FFF , 1594px 13px #FFF , 409px 843px #FFF , 1542px 869px #FFF , 219px 130px #FFF , 606px 1329px #FFF , 1289px 230px #FFF , 136px 1714px #FFF , 1610px 269px #FFF , 1230px 1646px #FFF , 394px 54px #FFF , 1311px 832px #FFF , 1567px 1122px #FFF , 1619px 1313px #FFF , 531px 1886px #FFF , 912px 1129px #FFF , 1927px 1981px #FFF , 1145px 1933px #FFF , 1980px 1142px #FFF , 1042px 126px #FFF , 1159px 244px #FFF , 342px 1375px #FFF , 1240px 800px #FFF , 1192px 148px #FFF , 813px 1084px #FFF , 502px 1966px #FFF , 251px 565px #FFF , 1282px 959px #FFF , 577px 196px #FFF , 850px 997px #FFF , 46px 1278px #FFF , 593px 110px #FFF , 319px 821px #FFF , 1916px 64px #FFF , 1762px 1033px #FFF , 1697px 993px #FFF , 1869px 774px #FFF , 1638px 88px #FFF , 906px 1405px #FFF , 1232px 1272px #FFF , 246px 1250px #FFF , 1191px 304px #FFF , 692px 1840px #FFF , 1181px 1859px #FFF , 1937px 1752px #FFF , 250px 269px #FFF , 119px 1143px #FFF , 1120px 1446px #FFF , 1576px 240px #FFF , 838px 1585px #FFF , 1627px 753px #FFF , 511px 323px #FFF , 259px 1067px #FFF , 1508px 70px #FFF , 268px 1511px #FFF , 604px 233px #FFF , 1769px 1525px #FFF , 1744px 337px #FFF , 1440px 741px #FFF , 94px 1514px #FFF , 927px 1377px #FFF , 1649px 629px #FFF , 1751px 531px #FFF , 788px 1403px #FFF , 1278px 1834px #FFF , 1353px 1543px #FFF , 1401px 517px #FFF , 299px 1102px #FFF , 319px 387px #FFF , 102px 1096px #FFF , 1846px 314px #FFF , 1883px 351px #FFF , 336px 1565px #FFF , 1562px 974px #FFF , 1337px 95px #FFF , 361px 1585px #FFF , 20px 78px #FFF , 1482px 889px #FFF , 332px 1390px #FFF , 615px 454px #FFF , 1910px 1694px #FFF , 1480px 243px #FFF , 1454px 180px #FFF , 999px 655px #FFF , 1295px 1473px #FFF , 1279px 1845px #FFF , 1251px 454px #FFF , 609px 34px #FFF , 896px 1351px #FFF , 854px 1608px #FFF , 1884px 516px #FFF , 836px 859px #FFF , 1252px 837px #FFF , 1735px 961px #FFF , 999px 752px #FFF , 138px 1867px #FFF , 1658px 410px #FFF , 1240px 1807px #FFF , 493px 1875px #FFF , 402px 1629px #FFF , 1804px 1681px #FFF , 1143px 899px #FFF , 1343px 1744px #FFF , 1925px 1276px #FFF , 1640px 20px #FFF , 1192px 1826px #FFF , 291px 483px #FFF , 1716px 582px #FFF , 241px 1450px #FFF , 1839px 1561px #FFF , 1317px 1407px #FFF , 1857px 1846px #FFF , 591px 977px #FFF , 229px 1793px #FFF , 1032px 1843px #FFF , 314px 306px #FFF , 705px 1642px #FFF , 1729px 641px #FFF , 1680px 1145px #FFF , 304px 806px #FFF , 662px 82px #FFF , 63px 1124px #FFF , 1910px 1603px #FFF , 605px 1851px #FFF , 1475px 1987px #FFF , 1755px 564px #FFF , 1298px 84px #FFF , 551px 68px #FFF , 302px 1112px #FFF , 1513px 1995px #FFF , 1091px 1711px #FFF , 1503px 172px #FFF , 1421px 1476px #FFF , 887px 616px #FFF , 1573px 300px #FFF , 1265px 1422px #FFF , 1969px 1296px #FFF , 927px 1893px #FFF , 1199px 390px #FFF , 308px 1692px #FFF , 891px 146px #FFF , 1663px 470px #FFF , 398px 921px #FFF , 1840px 1402px #FFF , 609px 736px #FFF , 705px 1425px #FFF , 861px 726px #FFF , 1187px 187px #FFF , 16px 828px #FFF , 937px 1740px #FFF , 4px 788px #FFF , 1189px 501px #FFF , 1766px 388px #FFF , 1000px 1566px #FFF , 765px 1009px #FFF;
+			}
+			
+			#stars3 {
+			  width: 6px;
+			  height: 6px;
+			  border-radius: 10px;
+			  background: transparent;
+			  box-shadow: 1833px 378px #FFF , 1926px 601px #FFF , 1349px 293px #FFF , 988px 1453px #FFF , 135px 1663px #FFF , 48px 673px #FFF , 1837px 343px #FFF , 1679px 1443px #FFF , 34px 512px #FFF , 1212px 1109px #FFF , 1510px 731px #FFF , 1775px 1875px #FFF , 1583px 1804px #FFF , 187px 1621px #FFF , 321px 223px #FFF , 1676px 1469px #FFF , 1544px 727px #FFF , 442px 443px #FFF , 1218px 1573px #FFF , 40px 673px #FFF , 1396px 1336px #FFF , 1630px 1984px #FFF , 1119px 789px #FFF , 1495px 1561px #FFF , 389px 714px #FFF , 643px 1299px #FFF , 54px 1140px #FFF , 1631px 174px #FFF , 1875px 664px #FFF , 104px 789px #FFF , 551px 1019px #FFF , 974px 147px #FFF , 816px 1732px #FFF , 498px 198px #FFF , 461px 627px #FFF , 320px 1970px #FFF , 1720px 1584px #FFF , 241px 446px #FFF , 1289px 1193px #FFF , 192px 98px #FFF , 244px 49px #FFF , 666px 243px #FFF , 309px 928px #FFF , 971px 1120px #FFF , 935px 934px #FFF , 1480px 1883px #FFF , 1442px 976px #FFF , 418px 818px #FFF , 1555px 889px #FFF , 827px 379px #FFF , 1666px 1744px #FFF , 985px 314px #FFF , 1371px 685px #FFF , 1462px 1783px #FFF , 673px 880px #FFF , 138px 1479px #FFF , 1478px 1924px #FFF , 1021px 913px #FFF , 931px 510px #FFF , 267px 556px #FFF , 1757px 298px #FFF , 1171px 1060px #FFF , 1661px 1424px #FFF , 840px 1073px #FFF , 961px 993px #FFF , 1772px 1754px #FFF , 1277px 870px #FFF , 804px 1149px #FFF , 1049px 1537px #FFF , 1908px 1395px #FFF , 1723px 1438px #FFF , 1310px 1549px #FFF , 855px 1292px #FFF , 587px 831px #FFF , 1642px 1542px #FFF , 80px 860px #FFF , 1985px 994px #FFF , 278px 410px #FFF , 183px 47px #FFF , 622px 1981px #FFF , 1535px 933px #FFF , 275px 1249px #FFF , 1215px 855px #FFF , 341px 145px #FFF , 542px 350px #FFF , 1843px 1787px #FFF , 1500px 741px #FFF , 1891px 228px #FFF , 420px 644px #FFF , 92px 396px #FFF , 1874px 872px #FFF , 810px 1166px #FFF , 1745px 1674px #FFF , 1227px 1616px #FFF , 1518px 1100px #FFF , 882px 509px #FFF , 568px 1021px #FFF , 1238px 1919px #FFF , 255px 817px #FFF , 177px 1861px #FFF;
+			  animation: animStar 15s linear infinite;
+			}
+			#stars3:after {
+			  content: " ";
+			  position: absolute;
+			  top: 2000px;
+			  width: 6px;
+			  height: 6px;
+			  border-radius: 50%;
+			  background: transparent;
+			  box-shadow: 1833px 378px #FFF , 1926px 601px #FFF , 1349px 293px #FFF , 988px 1453px #FFF , 135px 1663px #FFF , 48px 673px #FFF , 1837px 343px #FFF , 1679px 1443px #FFF , 34px 512px #FFF , 1212px 1109px #FFF , 1510px 731px #FFF , 1775px 1875px #FFF , 1583px 1804px #FFF , 187px 1621px #FFF , 321px 223px #FFF , 1676px 1469px #FFF , 1544px 727px #FFF , 442px 443px #FFF , 1218px 1573px #FFF , 40px 673px #FFF , 1396px 1336px #FFF , 1630px 1984px #FFF , 1119px 789px #FFF , 1495px 1561px #FFF , 389px 714px #FFF , 643px 1299px #FFF , 54px 1140px #FFF , 1631px 174px #FFF , 1875px 664px #FFF , 104px 789px #FFF , 551px 1019px #FFF , 974px 147px #FFF , 816px 1732px #FFF , 498px 198px #FFF , 461px 627px #FFF , 320px 1970px #FFF , 1720px 1584px #FFF , 241px 446px #FFF , 1289px 1193px #FFF , 192px 98px #FFF , 244px 49px #FFF , 666px 243px #FFF , 309px 928px #FFF , 971px 1120px #FFF , 935px 934px #FFF , 1480px 1883px #FFF , 1442px 976px #FFF , 418px 818px #FFF , 1555px 889px #FFF , 827px 379px #FFF , 1666px 1744px #FFF , 985px 314px #FFF , 1371px 685px #FFF , 1462px 1783px #FFF , 673px 880px #FFF , 138px 1479px #FFF , 1478px 1924px #FFF , 1021px 913px #FFF , 931px 510px #FFF , 267px 556px #FFF , 1757px 298px #FFF , 1171px 1060px #FFF , 1661px 1424px #FFF , 840px 1073px #FFF , 961px 993px #FFF , 1772px 1754px #FFF , 1277px 870px #FFF , 804px 1149px #FFF , 1049px 1537px #FFF , 1908px 1395px #FFF , 1723px 1438px #FFF , 1310px 1549px #FFF , 855px 1292px #FFF , 587px 831px #FFF , 1642px 1542px #FFF , 80px 860px #FFF , 1985px 994px #FFF , 278px 410px #FFF , 183px 47px #FFF , 622px 1981px #FFF , 1535px 933px #FFF , 275px 1249px #FFF , 1215px 855px #FFF , 341px 145px #FFF , 542px 350px #FFF , 1843px 1787px #FFF , 1500px 741px #FFF , 1891px 228px #FFF , 420px 644px #FFF , 92px 396px #FFF , 1874px 872px #FFF , 810px 1166px #FFF , 1745px 1674px #FFF , 1227px 1616px #FFF , 1518px 1100px #FFF , 882px 509px #FFF , 568px 1021px #FFF , 1238px 1919px #FFF , 255px 817px #FFF , 177px 1861px #FFF;
+			}
+			
+			#title {
+			  position: absolute;
+			  top: 50%;
+			  left: 0;
+			  right: 0;
+			  color: #FFF;
+			  text-align: center;
+			  font-family: "lato", sans-serif;
+			  font-weight: 300;
+			  font-size: 50px;
+			  letter-spacing: 10px;
+			  margin-top: -60px;
+			  padding-left: 10px;
+			}
+			#title span {
+			  background: -webkit-linear-gradient(white, #38495a);
+			  -webkit-background-clip: text;
+			  -webkit-text-fill-color: transparent;
+			}
+			
+			@keyframes animStar {
+			  from {
+				transform: translateY(-2000px);
+			  }
+			  to {
+				transform: translateY(0px);
+			  }
+			}
+			
+			.load_text {
+			    position:relative;
+			    overflow:hidden;
+			    border-right:3px solid;
+			    width:0px;
+			    word-break:keep-all;
+			    animation:typewriter 2s steps(20) infinite alternate, blink 0.5s steps(10) infinite;
+			}
+			.load_text span{
+			    font-size:30px;
+			    font-weight:700;
+				display: block;
+				width: 550px;
+			    background:linear-gradient(to right, #fff, #fff);
+			    -webkit-background-clip:text;
+			    -webkit-text-fill-color:transparent;
+			}
+			@keyframes typewriter {
+			    0% {
+			        width:0px;
+			    }
+			    100% {
+			        width:570px;
+			    }
+			}
+			@keyframes blink {
+			    0% {
+			        border-right-color:rgba(255, 255, 255, .75);
+			    }
+			    100% {
+			        border-right-color:transparent;
+			    }
+			}
+			/* :root{
+				--xyz-translate-default: 300%;
+				--xyz-ease-default: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+				--xyz-stagger-default: 1s;
+			} */
+			.page_one li>a{
+				position: relative;
+				z-index: 99;
+				height: 100%;
+				padding: 50px 35px;
+				display: flex;
+			}
+			.page_one li>a img{
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				transform: initial !important;
+			}
+			.page_one li>a div{
+				padding-left: 20px;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+			}
+			.page_one li>a div h2{
+				font-size: 16px;
+				margin-bottom: 5px;
+			}
+			.page_one li>a div span{
+				font-size: 12px;
+				color: #717171;
+			}
+			.page_one li:hover::after{
+				content: '';
+				position: absolute;
+				border-radius: 10px;
+				inset: 2px;
+				background: #fff;
+			}
+			.page_one li:hover{
+				box-shadow: 0 4px 12px #00000026;
+				transform: translateY(-10px);
+			}
+			
+			@property --rotate {
+			  syntax: "<angle>";
+			  initial-value: 132deg;
+			  inherits: false;
+			}
+			.page_one li:hover::before{
+				content: '';
+				display: block;
+				width: 100px;
+				height: 500px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				background-image: linear-gradient(var(--rotate), #8aa3bd, #8aa3bd 43%, #8aa3bd);
+				animation: spin 3s linear infinite;
+				transform: rotate(var(--rotate));
+			}
+			@keyframes spin {
+			  0% {
+			    --rotate: 0deg;
+			  }
+			  100% {
+			    --rotate: 360deg;
+			  }
+			  
+			}
+		</style>
+	</head>
+	<body>
+		<div class="star">
+			<div id='stars'></div>
+				<div id='stars2'></div>
+				<div id='stars3'></div>
+				<div id='title'>
+				<!-- <span>你那里下雪了吗</span> -->
+			</div>
+		</div>
+		<div class="wrapper">
+		  <div class="content">
+		    <section class="section page_banner">
+				<div class="load_text">
+					<span>世上本没有路，走的人多了，也便成了路</span>
+				</div>
+			</section>
+		    <section class="section page_one">
+				<ul xyz="fade down stagger-5">
+					<li class="xyz-nested">
+						<a href="./page/ui.html" target="_blank">
+							<img src="../img/bg.jpg" alt="" />
+							<div>
+								<h2>前端资源合集</h2>
+								<span>前端组件UI、插件工具、中后台系统、低代码、可视化、开源项目、学习资源</span>
+							</div>
+						</a>
+					</li>
+					<li class="xyz-nested">
+						<a href="###" target="_blank">
+							<img src="../img/bg.jpg" alt="" />
+							<div>
+								<h2>后台模板系统</h2>
+								<span>集成各种常用功能插件，包括图片裁剪、超级表格</span>
+							</div>
+						</a>
+					</li>
+					<li class="xyz-nested">
+						<a href="http://tseven.top/code" target="_blank">
+							<img src="../img/bg.jpg" alt="" />
+							<div>
+								<h2>特效源码</h2>
+								<span>在线源码编辑</span>
+							</div>
+						</a>
+					</li>
+					<li class="xyz-nested">
+						<a href="###" target="_blank">
+							<img src="../img/bg.jpg" alt="" />
+							<div>
+								<h2>图片海报设计</h2>
+								<span>描述</span>
+							</div>
+						</a>
+					</li>
+					<li class="xyz-nested">
+						<a href="###" target="_blank">
+							<img src="../img/bg.jpg" alt="" />
+							<div>
+								<h2>视频剪辑</h2>
+								<span>描述</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</section>
+		    <section class="section page_top">好好好</section>
+		  </div>
+		  <div class="image-container">
+		    <img src="../home.png" alt="image">
+		  </div>
+		</div>
+		<!-- pop -->
+		<ul id="loading" class="running">
+			<li><div id="layer1" class="ball"></div><div id="layer6" class="pulse"></div></li>
+			<li><div id="layer2" class="ball"></div><div id="layer7" class="pulse"></div></li>
+			<li><div id="layer3" class="ball"></div><div id="layer8" class="pulse"></div></li>
+			<li><div id="layer4" class="ball"></div><div id="layer9" class="pulse"></div></li>
+			<li><div id="layer5" class="ball"></div><div id="layer10" class="pulse"></div></li>
+		</ul>
+		<script type="text/javascript" src="../utils/t.lib.js"></script>
+		<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/gsap/3.9.1/gsap.min.js" type="application/javascript"></script>
+		<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/gsap/3.9.1/ScrollTrigger.min.js" type="application/javascript"></script>
+		<script type="text/javascript">
+			console.clear();
+			
+			gsap.registerPlugin(ScrollTrigger);
+			
+			window.addEventListener("load", () => {
+			  gsap
+			    .timeline({
+			      scrollTrigger: {
+			        trigger: ".wrapper",
+			        start: "top top",
+			        end: "+=150%",
+			        pin: true,
+			        scrub: true,
+			        markers: false
+			      }
+			    })
+			    .to("img", {
+			      scale: 2,
+			      z: 350,
+			      transformOrigin: "center center",
+			      ease: "power1.inOut"
+			    })
+			    .to(
+			      ".section.page_banner",
+			      {
+			        scale: 1.1,
+			        transformOrigin: "center center",
+			        ease: "power1.inOut"
+			      },
+			      "<"
+			    );
+			});
+			function debounce(fn, time){
+				let timer = null
+				return function(){
+					clearTimeout(timer)
+					timer = setTimeout(() => {
+						fn.apply(this, arguments)
+					}, time)
+				}
+			}
+			const target = document.querySelector('.page_one ul');
+			const star = document.querySelector('.star');
+			const observer = new IntersectionObserver((entries) => {
+			  entries.forEach(entry => {
+				  console.log(entry)
+				// 检查目标元素是否进入或离开视口
+				if (entry.isIntersecting) {
+				  // 目标元素进入视口
+				  target.classList.add("xyz-in");
+				  star.style.display = 'none'
+				  setTimeout(() => {
+					  target.classList.remove("xyz-in")
+				  }, 3000)
+				} else {
+				  // 目标元素离开视口
+				  // function removeClass() {
+					 //  console.log('Element is not in viewport');
+					 //  target.classList.remove("xyz-in");
+				  // }
+				  // debounce(removeClass, 1000)()
+				  star.style.display = 'block'
+				}
+			  });
+			});
+			// 开始观察目标元素
+			observer.observe(target);
+			
+		</script>
+	</body>
 </html>

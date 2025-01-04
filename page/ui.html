@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>资源</title>
+		<link rel="stylesheet" href="../utils/t.lib.css">
+		<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/loadingio/transition.css@v2.0.0/dist/transition.min.css">
+		<style>
+			html{
+				scroll-behavior: smooth;
+			}
+			body{
+				background: #EDF0F5;
+			}
+			/* 滚动条宽高 */
+			::-webkit-scrollbar {
+			    width: 7px;
+			}
+			/* 滚动条滑块 */
+			::-webkit-scrollbar-thumb {
+			    border-radius: 10px;
+			    background: #ccc;
+			}
+			/* 滚动条轨道 */
+			::-webkit-scrollbar-track {
+			    
+			}
+			/* 滚动条两端按钮 */
+			::-webkit-scrollbar-button {
+				
+			}
+			section{
+				margin: -150px auto 0;
+				background: #fff;
+				position: relative;
+				width: 95%;
+				padding: 10px 0 50px;
+				border-radius: 20px;
+				min-height: 500px;
+			}
+			section ul{
+				border-bottom: 1px solid #EDF0F5;
+			}
+			ul{
+				display: flex;
+				flex-wrap: wrap;
+				width: 95%;
+				margin: 0 auto;
+			}			
+			li{
+				--width: 230px;
+				--len: 5;
+				width: var(--width);
+				transition: all .3s;
+				border-radius: 10px;
+				margin: 0 calc((100% - var(--width) * var(--len)) / var(--len) / 2) 30px;
+			}
+			li p{
+				box-shadow: 0 2px 5px rgb(0 0 0 / 8%);
+				/* border: 1px solid #c1d7e6; */
+				background: #f4f7fc;
+				padding: 20px;
+				border-radius: 10px;
+				height: 100%;
+			}
+			ul li:hover{
+				/* box-shadow: 0 4px 12px #00000026; */
+				box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+				    -7px -7px 20px rgba(255, 255, 255, 1),
+				    inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+				    inset 7px 7px 15px rgba(55, 84, 170, 0),
+				    inset -7px -7px 20px rgba(255, 255, 255, 0),
+				    0px 0px 4px rgba(255, 255, 255, 0);
+				transition: all 0.3s;
+				transform: translateY(-5px);
+				position: relative;
+				z-index: 2;
+			}
+			img{
+				top: 1px;
+				right: 1px;
+				display: block;
+				clear: both;
+				padding-top: 10px;
+				cursor: pointer;
+			}
+			a{
+				display: block;
+				margin-bottom: 10px;
+			}
+			span{
+				font-size: 12px;
+				color: #969696;
+				padding: 0 10px 3px 0;
+				float: left;
+			}
+			.input-box{
+				background: url('../img/bg3.jpg') no-repeat top;
+				background-attachment: fixed;
+				height: 500px;
+				margin: 0 auto 10px;
+				background-size: 100%;
+			}
+			input{
+				box-shadow: 0 0 10px rgb(0 0 0 / 8%);
+				height: 55px;
+				width: 450px;
+				border-radius: 6px;
+				display: block;
+				margin: auto;
+				border: none;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			h2{
+				width: 99%;
+				margin: auto;
+				padding: 30px 40px 25px;
+				font-size: 16px;
+				position: sticky;
+				top: 0;
+				background: #fff;
+				z-index: 1;
+				margin-bottom: 5px;
+			}
+			.tag-box{
+				display: flex;
+				padding: 40px 0 160px;
+				justify-content: space-evenly;
+			}
+			.tag-box p a{
+				color: #fff;
+			}
+			.to-top{
+				position: fixed;
+				bottom: 20px;
+				right: 22px;
+				cursor: pointer;
+			}
+			@media screen and (max-width: 1300px){
+				li{
+					--len: 4;
+				}
+			}
+			@media screen and (max-width: 1100px){
+				li{
+					--len: 3;
+				}
+				.input-box{
+					height: 400px;
+				}
+				.tag-box{
+					padding: 30px 0 60px;
+				}
+			}
+			@media screen and (max-width: 780px){
+				li{
+					--width: 195px;
+				}
+				.input-box{
+					height: 300px;
+				}
+				.tag-box{
+					flex-wrap: wrap;
+					justify-content: start;
+					margin-left: 15px;
+					padding: 15px 0;
+				}
+				.tag-box p{
+					margin: 0 15px 0 0;
+				}
+			}
+			@media screen and (max-width: 670px){
+				li{
+					--width: 155px;
+				}
+			}
+			@media screen and (max-width: 570px){
+				li{
+					--len: 2;
+					--width: 155px;
+					margin-bottom: 15px;
+				}
+				li p{
+					padding: 15px;
+				}
+				.input-box{
+					height: 200px;
+				}
+				input{
+					display: none;
+				}
+				section{
+					margin-top: -100px;
+					padding-top: 0;
+				}
+				h2{
+					font-size: 14px;
+					width: 100%;
+					border-radius: 10px 10px 0 0;
+					padding: 15px 17px;
+				}
+			}
+		</style>
+		<script>
+			var url = 'https://github.com/'
+			function toGithub(path) {
+				window.open(/gitee/.test(path) ? path : url + path, '_blank')
+			}
+		</script>
+	</head>
+	<body>
+		<div class="input-box ld ld-slide-ttb-in" id="input">
+			<div class="tag-box"></div>
+			<input type="search" placeholder="请输入查询内容..." oninput="changeInput">
+		</div>
+		<section></section>
+		<a class="to-top" href="#input">
+			<?xml version="1.0" encoding="UTF-8"?>
+			<svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M24.0083 14.1006V42.0001" stroke="#05a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M12 26L24 14L36 26" stroke="#05a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M12 6H36" stroke="#05a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</a>
+		<script type="text/javascript" src="../utils/t.lib.js"></script>
+		<script type="module">
+			import data from "../utils/data.js"
+			// console.log(data)
+			
+			function createUl(data) {
+				let uiArr, el = '', path = '', tagHtml = '';
+				for (let key in data) {
+					tagHtml += `<p><a href="#${key}">${key}</a></p>`
+					uiArr = data[key] //class="ld ld-slide-btt-in" 
+					el += `<div><h2 class="ld ld-fade-in" id="${key}">${key}(${uiArr.length})</h2><ul>`
+					for (let i = 0; i < uiArr.length; i++) { // class="xyz-in" xyz="stagger fade down"
+						el += `<li><p class="ld ld-slide-btt-in">
+							<a href="${uiArr[i].url}" target="_blank">${uiArr[i].name}</a>`
+						for (let j = 0; j < uiArr[i].tag.length; j++) {
+							el += `<span>${uiArr[i].tag[j]}</span>`
+						}	
+						if(uiArr[i].path || /(gitee.com)|(github.com)/.test(uiArr[i].url)){
+							if(uiArr[i].path){
+								path = uiArr[i].path								 
+							}else{
+								path = /gitee/.test(uiArr[i].url) ? uiArr[i].url : uiArr[i].url.split(url)[1] 
+							}
+							el += `<img onerror="this.style.display = 'none'" onclick="toGithub('${path}')"`
+							if(/gitee/.test(path)){
+								el += `data-src="${path}/badge/star.svg"`
+							}else{
+								el += `data-src="https://img.shields.io/github/stars/${path}?style=flat">`
+								el += `<img onerror="this.style.display = 'none'" data-src="https://img.shields.io/github/last-commit/${path}">`
+							}
+						}else{
+							el += `<img onerror="this.style.display = 'none'" 
+							data-src="https://img.shields.io/badge/info-${uiArr[i].name}-orange"`
+						}
+						el += `</p></li>`
+					}
+					el += '</ul></div>'
+				}
+				document.querySelector('.tag-box').innerHTML = tagHtml
+				document.querySelector('section').innerHTML = el
+				layoutPhoto()
+			}
+			createUl(data)
+			
+			// 图片懒加载
+			function layoutPhoto () {
+				let bodyScroll = 0, bodyHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				let imgEle = document.querySelectorAll('img')
+				imgIsShow()
+				function imgIsShow() {
+					imgEle.forEach((item, index) => {
+						if(!item.src && item.getClientRects()[0].top - bodyScroll < bodyHeight){
+							item.src = item.dataset.src
+						}
+					})
+				}
+				let throttleFun = tjs.throttle(scroll, 500)
+				function scroll() {
+					bodyScroll = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop
+					imgIsShow()
+				}
+				window.onscroll = () => {
+					throttleFun()
+				}
+			}
+			
+			
+			// 搜索
+			function search(val) {
+				let filterArr = [], obj = {}
+				for(let key in data) {
+					filterArr = data[key].slice().filter((item) => {
+						return new RegExp(val).test(item.name.toLowerCase()) || 
+						item.tag.some(res => new RegExp(val).test(res.toLowerCase()))
+					})
+					if(filterArr.length){
+						obj[key] = filterArr
+					}
+				}
+				// console.log(obj)
+				return obj
+			}
+			
+			
+			function changeInput() {
+				let elInput = document.querySelector('input')
+				elInput.addEventListener('input', ()=>{
+					let obj = search(elInput.value)
+					createUl(elInput.value ? obj : data)
+				})
+			}
+			changeInput()
+			
+		</script>
+	</body>
+</html>

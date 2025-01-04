@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="referrer" content="no-referrer" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>hots</title>
+		<link rel="stylesheet" href="../utils/t.lib.css">
+		<link rel="stylesheet" href="../css/hots.amin.css">
+		<link rel="stylesheet" href="https://npm.elemecdn.com/@animxyz/core">
+		<!-- <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-10-y/scrollReveal.js/0.1.2/scrollReveal.min.js" type="application/javascript"></script> -->
+		<!-- <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-10-y/scrollReveal.js/4.0.9/scrollreveal.min.js" type="application/javascript"></script> -->
+		<script async src="https://unpkg.com/scrollreveal"></script>
+		<style>
+			body{
+				background: #EDF0F5;
+				display: flex;
+				background: url('../img/bg-2.svg') no-repeat bottom;
+				background-size: cover;
+				height: 100vh;
+				overflow: auto;
+				/* container-type: inline-size;/* 此属性会改变子元素的offsetParent为当前元素 */
+				/* container-name: boy; */
+				--color: #e1e6fb;
+				--bgColor: #ffffff9c;
+			}
+			.cursor{
+				cursor: pointer;
+			}
+			.padding{
+				padding: 50px;
+			}
+			/* 滚动条宽高 */
+			::-webkit-scrollbar {
+			    width: 7px;
+				height: 1px;
+			}
+			/* 滚动条滑块 */
+			::-webkit-scrollbar-thumb {
+			    border-radius: 10px;
+			    background: #ccc;
+			}
+			/* 滚动条轨道 */
+			::-webkit-scrollbar-track {
+			    
+			}
+			/* 滚动条两端按钮 */
+			::-webkit-scrollbar-button {
+				
+			}
+			/* 侧边栏 */
+			aside{
+				flex: 1;
+				background: rgba(255,255,255,.7);
+				box-shadow: 2px 0 10px var(--color);
+				height: 100vh;
+				overflow: auto;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+			}
+			aside div{
+				text-align: center;
+			}
+			aside p{
+				font-size: 20px;
+				margin: 20px 0;
+			}
+			aside ul{
+				margin: 0 20px 60px;
+			}
+			aside li{
+				padding: 30px 0 30px 20px;
+				border-top: 1px solid var(--color);
+				cursor: pointer;
+			}
+			aside li.hover{
+				background: var(--color);
+				border-radius: 5px;
+			}
+			/* 内容区 */
+			.content{
+				flex: 4;
+				height: 100vh;
+				overflow: auto;
+			}
+			.content>div, .content>nav{
+				display: none;
+			}
+			.content>div.actived, .content>nav.actived{
+				display: flex;
+			}
+			
+			/* 热搜导航 */
+			nav{
+				display: flex;
+				flex-wrap: wrap;
+				width: 85%;
+				margin: 0 auto;
+			}			
+			nav>p{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				position: relative;
+				overflow: hidden;
+				--width: 170px;
+				--len: 3;
+				width: var(--width);
+				letter-spacing: 10px;
+				text-indent: 10px;
+				height: var(--width);
+				line-height: var(--width);
+				box-shadow: 0 0 10px rgb(0 0 0 / 8%);
+				border-radius: 10px;
+				background: rgba(255,255,255,.7);
+				transition: all .3s;
+				margin: 95px calc((100% - var(--width) * var(--len)) / var(--len) / 2) 0;
+			}
+			nav span{
+				position: relative;
+				z-index: 1;
+				font-size: 20px;
+			}
+			nav>p::after{
+				content: '';
+				position: absolute;
+				background: #fff;
+				inset: 2px;
+				border-radius: 10px;
+			}
+			nav>p:hover, .movie-box li:hover{
+				box-shadow: 0 4px 12px #00000026;
+				transform: translateY(-5px);
+			}
+			nav>p:hover:before{
+			}
+			/* @property --rotate {
+			  syntax: "<angle>";
+			  initial-value: 132deg;
+			  inherits: false;
+			} */
+			nav>p::before{
+				content: '';
+				display: block;
+				width: 100px;
+				height: 300px;
+				position: absolute;
+				background-image: linear-gradient(var(--rotate), #c7c9e0, #e3d7e6 43%, #9bc4e0);
+				animation: spin 3s linear infinite;
+				transform: rotate(var(--rotate));
+			}
+			@keyframes spin {
+			  0% {
+			    --rotate: 0deg;
+			  }
+			  100% {
+			    --rotate: 360deg;
+			  }
+			  
+			}
+			/* 热搜内容 */
+			section{
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				z-index: 9999;
+				visibility: hidden;
+				
+			}
+			section>div{
+				width: 50%;
+				margin: auto;
+			}
+			section>i{
+				position: fixed;
+				right: 30px;
+				top: 20px;
+				cursor: pointer;
+			}
+			section h2{
+				font-size: 20px;
+				margin: 30px 0 20px;
+			}
+			section h2 span{
+				padding-left: 10px;
+			}
+			section li{
+				margin: 0 20px;
+				padding: 20px 0;
+				border-bottom: 1px solid #dfdfdf;
+			}
+			section li a{
+				display: flex;
+			}
+			section a span{
+				padding-right: 10px;
+				color: red;
+			}
+			section li i{
+				margin-left: auto;
+			}
+			/* 电影 */
+			.movie-box ul{
+				height: 100vh;
+				overflow: auto;
+			}
+			.movie-box li{
+				display: flex;
+				margin-bottom: 40px;
+				background: var(--bgColor);
+				padding: 30px;
+				border-radius: 5px;
+				visibility: hidden;
+			}
+			.movie-box img{
+				height: 200px;
+			} 
+			.movie-box li>div{
+				padding-left: 30px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				cursor: pointer;
+			}
+			.movie-box h2{
+				font-size: 25px;
+				margin-bottom: 20px;
+			}
+			.movie-box p{
+				line-height: 2;
+			}
+			.movie-box li>div div:last-of-type{
+				margin-bottom: 10px;
+			}
+			.movie-box span{
+				margin-right: 20px;
+			}
+			/* 其他/翻译 */
+			.other-box{
+				gap: 30px;
+				flex-direction: column;
+			}
+			.other-box>div{
+				display: flex;
+				gap: 40px;
+			}
+			.other-box .left{
+				display: flex;
+				flex-direction: column;
+				gap: 30px;
+				flex: 3;
+			}
+			.other-box .left>div{
+				border: 1px solid var(--color);
+				background: var(--bgColor);
+				border-radius: 5px;
+			}
+			.other-box .calendar{
+				flex: 2;
+			}
+			.other-box .trans-text, .other-box .garbage-type{
+				padding: 20px;
+				flex: 1;
+			}
+			.other-box .textarea-box{
+				display: flex;
+				justify-content: space-evenly;
+			}
+			.other-box .left p{
+				padding: 20px;
+				
+			}
+			.other-box textarea{
+				border: none;
+				border-bottom: 1px solid;
+				padding: 15px;
+				margin: 15px 0;
+				background: none;
+				width: 70%;
+				line-height: 1.5;
+				resize: none;
+			}
+			.other-box button{
+				background: var(--color);
+				border: none;
+				padding: 0 30px;
+				margin: 15px 0;
+				color: #fff;
+				font-size: 15px;
+				border-radius: 5px;
+				letter-spacing: 5px;
+				text-indent: 5px;
+			}
+			.other-box .quotes{
+				background: var(--bgColor);
+				padding: 25px;
+				border-radius: 5px;
+			}
+			
+			/* 新闻 */
+			.news-box{
+				flex-direction: column;
+			}
+			.news-box h2{
+				font-size: 20px;
+				text-align: center;
+				background: var(--bgColor);
+				padding: 50px 0 0;
+			}
+			.news-box ul{
+				padding: 30px 50px;
+				background: var(--bgColor);
+				border-radius: 10px;
+			}
+			.news-box li{
+				padding: 15px 0;
+				line-height: 2;
+				border-bottom: 1px dashed var(--color);
+			}
+			/* 星座 */
+			.life-box .constellation{
+				width: 100%;
+			}
+			.life-box .constellation ul{
+				display: flex;
+				width: 100%;
+				overflow-x: auto;
+			}
+			.life-box .constellation li{
+				padding: 30px 50px 30px 0;
+				text-align: center;
+			}
+			.life-box .constellation img{
+				width: 86px;
+				border-radius: 10px;
+			}
+			.life-box .constellation h3{
+				margin: 15px 0;
+			}
+			.life-box .constellation span{
+				display: block;
+			}
+			.life-box .cons-content{
+				line-height: 4;
+			}
+			.life-box .cons-content h3{
+				margin-bottom: 0;
+			}
+			.life-box .lucky-box{
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			
+			
+			@container boy (max-width: 500px){
+				nav{
+					padding: 0 10px;
+					width: 100%;
+				}
+				nav>p{
+					--len: 2;
+					--width: 160px;
+					margin-top: 16px;
+				}
+				section>div{
+					width: 100%;
+				}
+				section h2{
+					text-align: center
+				}
+				section i{
+					right: 10px;
+					top: 10px
+				}
+			}
+			/* loading */
+			ul#loading{
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				display: none;
+			}
+			ul#loading li{
+				float: left;
+				position: relative;
+				margin-left: 10px;
+			}
+			ul#loading li:first-child{
+				margin-left: 0;
+			}
+			.running .ball{
+				/* background-color:#2187e7;
+				background-image:linear-gradient(90deg, #2187e7 25%, #a0eaff);*/
+				background-color: var(--color);
+				background-image: linear-gradient(90deg, var(--color));
+				width: 15px;
+				height: 15px;
+				border-radius: 50px;
+				transform: scale(0);
+				animation: loading 1s linear infinite;
+			}
+			.running .pulse{
+				width: 15px;
+				height: 15px;
+				border-radius: 30px;
+				/* border:1px solid #00c6ff; */
+				/* box-shadow:0 0 5px #00c6ff; */
+				border: 1px solid var(--color);
+				box-shadow: 0 0 5px var(--color);
+				position: absolute;
+				top: 0;
+				left: 0;
+				transform: scale(0);
+				animation: pulse 1s ease-out infinite;
+			}
+			#layer1{
+				animation-delay: 0.1s;
+			}
+			#layer2{
+				animation-delay: 0.2s;
+			}
+			#layer3{
+				animation-delay: 0.3s;
+			}
+			#layer4{
+				animation-delay: 0.4s;
+			}
+			#layer5{
+				animation-delay: 0.5s;
+			}
+			#layer6{
+				animation-delay: 0.2s;
+			}
+			#layer7{
+				animation-delay: 0.4s;
+			}
+			#layer8{
+				animation-delay: 0.6s;
+			}
+			#layer9{
+				animation-delay: 0.8s;
+			}
+			#layer10{
+				animation-delay: 1s;
+			}
+			@keyframes loading{
+				0%{
+					transform: scale(0, 0);
+				}
+				50%{
+					transform: scale(1, 1);
+				}	
+				100%{
+					transform: scale(0, 0);
+				}	
+			}
+			@keyframes pulse{
+				0%  {
+					transform: scale(0);
+					opacity: 0;
+				}
+			    10% {
+					transform: scale(1);
+					opacity: 0.5;
+				}
+				50% {
+					transform: scale(1.75);
+					opacity: 0;
+				}
+			    100%{
+					transform: scale(0);
+					opacity: 0;
+				}  
+			}
+			
+			/* 打字 */
+			p.dynamicfont{
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				line-height: 2;
+			}
+			.dynamicfont i{
+				content: '';
+				width: 2px;
+				height: 20px;
+				margin-left: 2px;
+				display: inline-block;
+				background: #000;
+				animation: anim 1s linear infinite;
+				
+			}
+			.dynamicfont span{
+				animation: animspan .5s linear;
+			}
+			@keyframes animspan{
+				0% {
+					/* opacity: 0; */
+					transform: translate(5px, 0);
+					transform-origin: center center;
+				}
+				50% {
+					/* opacity: 1; */
+					transform: translate(0, 0);
+					transform-origin: center center;
+				}
+				 
+			}
+			@keyframes anim{
+				0%, 100% {
+					opacity: 0;
+					transform: scale(0);
+					transform-origin: center center;
+				}
+				50% {
+					opacity: 1;
+					transform: scale(1);
+					transform-origin: center center;
+				}
+				 
+			}
+		</style>
+	</head>
+	<body>
+		<aside>
+			<div>
+				<h2></h2>
+				<p></p>
+				<span></span>
+			</div>
+			<ul>
+				<li data-type="hot" class="hover">各大平台热搜排行榜</li>
+				<li data-type="movie">实时电影排行榜</li>
+				<li data-type="news">每日新闻</li>
+				<li data-type="other">翻译/垃圾分类/日历</li>
+				<li data-type="life">快递/星座</li>
+				<li data-type="">各大平台热搜排行榜</li>
+				<li data-type="">各大平台热搜排行榜</li>
+			</ul>
+		</aside>
+		<div class="content">
+			<nav class="actived xyz-in" xyz="stagger fade down">
+				<p id="el-topleft" data-type="wbHot" class="cursor"><span>微博</span></p>
+				<p id="el-top" data-type="douyinHot" class="cursor"><span>抖音</span></p>	
+				<p id="el-topright" data-type="zhihuHot" class="cursor"><span>知乎</span></p>
+				
+				<p id="el-left" data-type="baiduRD" class="cursor"><span>百度</span></p>
+				<p id="el-center" data-type="douban" class="cursor"><span>豆瓣</span></p>
+				<p id="el-right" data-type="huPu" class="cursor"><span>虎扑</span></p>
+				
+				<p id="el-btmleft" data-type="bili" class="cursor"><span>哔哩</span></p>	
+				<p id="el-btm" data-type="wxHot" class="cursor"><span>微信</span></p>	
+				<p id="el-btmright" data-type="baiduRY" class="cursor"><span>贴吧</span></p>	
+			</nav>
+			<div class="xyz-in movie-box" xyz="stagger fade down">
+				<ul class="padding"></ul>
+			</div>
+			<div class="xyz-in news-box padding" xyz="stagger fade down">
+				<h2></h2>
+				<ul></ul>
+			</div>
+			<div class="xyz-in other-box padding" xyz="stagger fade down">
+				<div class="quotes">
+					<p class="dynamicfont"><i></i></p>
+				</div>
+				<div>
+					<div class="left">
+						<div class="trans-text">
+							<h2>翻译</h2>
+							<div class="textarea-box">
+								<textarea rows="1" placeholder="请输入翻译内容..."></textarea><button class="cursor">翻译</button>
+							</div>
+							<p class="dynamicfont"><i></i></p>	
+						</div>
+						<div class="garbage-type">
+							<h2>垃圾分类</h2>
+							<div class="textarea-box">
+								<textarea rows="1" placeholder="请输入垃圾名称..."></textarea><button class="cursor">查询</button>
+							</div>
+							<p class="dynamicfont"><i></i></p>	
+						</div>
+					</div>
+					<img class="calendar" onerror="this.src = 'https://via.placeholder.com/250x300/e1e6fb/fff?text=placehoder'" 
+					src="https://via.placeholder.com/250x300/e1e6fb/fff?text=placehoder">
+				</div>
+		
+			</div>
+			<div class="xyz-in life-box padding" xyz="stagger fade down">
+				<div class="constellation">
+					<h2>星座运势</h2>
+					<ul>
+						<li data-type="aquarius" class="cursor">
+							<img src="https://gimg3.baidu.com/search/src=https%3A%2F%2Fsearch-operate.cdn.bcebos.com%2F583736958f6ae5b5746b33320f9c1e5a.png&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=w621&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1687453200&t=d1eb19f1f0d438c33f40aae4dfbc0ac1" alt="">
+							<h3>水瓶座</h3>
+							<span>01.20-02.18</span>
+						</li>
+						<li data-type="pisces" class="cursor">
+							<img src="https://gimg3.baidu.com/search/src=https%3A%2F%2Fsearch-operate.cdn.bcebos.com%2F490f64c038ddd3997df8423ee71df30f.png&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=w621&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1687453200&t=a66d4bd84980de36e4ab7cac7edcd4ca" />	
+							<h3>双鱼座</h3>
+							<span>02.19-03.20</span>
+						</li>
+						<li data-type="aries" class="cursor">
+							<img src="https://gimg3.baidu.com/search/src=https%3A%2F%2Fsearch-operate.cdn.bcebos.com%2Fc5c2a433fddf4620ef0911e587e0b054.png&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=w621&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1687453200&t=2cbdcd91eb1a5fd0864c479b01d8efdb" />	
+							<h3>白羊座</h3>
+							<span>03.21-04.19</span>
+						</li>
+						<li data-type="taurus" class="cursor">
+							<img src="https://gimg3.baidu.com/search/src=https%3A%2F%2Fsearch-operate.cdn.bcebos.com%2F75c7da10ddf40a3196a545cac3112032.png&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=w621&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1687453200&t=4e56f3e431de6427733e1dd4cf60b38e" />	
+							<h3>金牛座</h3>
+							<span>04.20-05.20</span>
+						</li>
+						<li data-type="gemini" class="cursor">
+							<img src="https://gimg3.baidu.com/search/src=https%3A%2F%2Fsearch-operate.cdn.bcebos.com%2Fa11d3a2705511a8b3b65191c35c587d3.png&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=w621&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1687453200&t=88ba9f35a9c7afc4cb78a60d6855b846" />	
+							<h3>双子座</h3>
+							<span>05.21-06.21</span>
+						</li>
+						<li data-type="cancer" class="cursor">
+							<img src="https://gimg3.baidu.com/search/src=https%3A%2F%2Fsearch-operate.cdn.bcebos.com%2Fa27a7148ca71f3d0fe8b1981839958b6.png&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=w621&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1687453200&t=3fa677de90259a9f9d89a99a275d7b64" />	
+							<h3>巨蟹座</h3>
+							<span>06.22-07.22</span>
+						</li>
+						<li data-type="leo" class="cursor">
+							<img src="https://gimg3.baidu.com/search/src=https%3A%2F%2Fsearch-operate.cdn.bcebos.com%2Fad3fc4900f8f73d24f9aa14f48ca9f93.png&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=w621&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1687453200&t=3646f43fba9b49f1664c5c20a96841b9" />	
+							<h3>狮子座</h3>
+							<span>07.23-08.22</span>
+						</li>
+						<li data-type="virgo" class="cursor">
+							<img src="https://gimg3.baidu.com/search/src=https%3A%2F%2Fsearch-operate.cdn.bcebos.com%2F86837ff0b41429c3f83c73a4b0348e40.png&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=w621&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1687453200&t=ca68bc5dcff129c2849029eef4dae751" />	
+							<h3>处女座</h3>
+							<span>08.23-09.22</span>
+						</li>
+						<li data-type="libra" class="cursor">
+							<img src="https://gimg3.baidu.com/search/src=https%3A%2F%2Fsearch-operate.cdn.bcebos.com%2F8a6225962c67be00d6ababbb155a72a3.png&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=w621&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1687453200&t=0d2318fa0e13c0e3ca7d48c90bb7869a" />	
+							<h3>天秤座</h3>
+							<span>09.23-10.23</span>
+						</li>
+						<li data-type="scorpio" class="cursor">
+							<img src="https://gimg3.baidu.com/search/src=https%3A%2F%2Fsearch-operate.cdn.bcebos.com%2Fb43146555169fc40e444818929319d9c.png&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=w621&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1687453200&t=e67bf4dc368f568cf72381c661683f48" />	
+							<h3>天蝎座</h3>
+							<span>10.24-11.22</span>
+						</li>
+						<li data-type="sagittarius" class="cursor">
+							<img src="https://gimg3.baidu.com/search/src=https%3A%2F%2Fsearch-operate.cdn.bcebos.com%2F0d2bf1246e0cb7718b55df829d5b6576.png&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=w621&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1687453200&t=f529371b74ed8e40c66ee47b4d1b4f07" />	
+							<h3>射手座</h3>
+							<span>11.23-12.21</span>
+						</li>
+						<li data-type="capricorn" class="cursor">
+							<img src="https://gimg3.baidu.com/search/src=https%3A%2F%2Fsearch-operate.cdn.bcebos.com%2F7981449005979ed6171086438095a263.png&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=w621&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1687453200&t=5a41289f8be64588fde041682f26e151" />	
+							<h3>摩羯座</h3>
+							<span>12.22-1.19</span>
+						</li>
+					</ul>
+					<div class="cons-content"></div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- pop -->
+		<ul id="loading" class="running">
+			<li><div id="layer1" class="ball"></div><div id="layer6" class="pulse"></div></li>
+			<li><div id="layer2" class="ball"></div><div id="layer7" class="pulse"></div></li>
+			<li><div id="layer3" class="ball"></div><div id="layer8" class="pulse"></div></li>
+			<li><div id="layer4" class="ball"></div><div id="layer9" class="pulse"></div></li>
+			<li><div id="layer5" class="ball"></div><div id="layer10" class="pulse"></div></li>
+		</ul>
+		<section class="overlay">
+			<i class="close">
+				<?xml version="1.0" encoding="UTF-8"?>
+				<svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M8 8L40 40" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M8 40L40 8" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</i>
+			<div></div>
+		</section>
+		<script type="text/javascript" src="../utils/t.lib.js"></script>
+		<script type="text/javascript">
+			// 导航
+			changeNav()
+			function changeNav() {
+				let lis = document.querySelectorAll('aside li'),
+					contents = document.querySelector('.content').childNodes;
+					contents = [...contents].filter(item => item.nodeType == 1)
+				lis.forEach((item, index) => {
+					tjs.bind(item, 'click', function(event){
+						lis.forEach(i => {
+							if(tjs.hasClass(i, 'hover')){
+								tjs.removeClass(i, 'hover')
+							}
+						})
+						tjs.addClass(this, 'hover')
+						
+						contents.forEach(i => {
+							if(tjs.hasClass(i, 'actived')){
+								tjs.removeClass(i, 'actived')
+							}
+						})
+						tjs.addClass(contents[index], 'actived')
+						document.querySelector('#loading').style.display = 'none'
+						navCallBack(this.dataset.type)
+					})
+				})
+			}
+			function navCallBack(type) {
+				switch(type){
+					case 'movie':
+						getMovieInfo()
+						break
+					case 'news':
+						getNews()
+						break
+					case 'other':
+						let dynamicfont = document.querySelectorAll('.dynamicfont'),
+						textarea = document.querySelectorAll('textarea')
+						for(let i = 0; i < dynamicfont.length; i++){
+							dynamicfont[i].innerHTML = `<i></i>`
+							if(i < textarea.length){
+								textarea[i].value = ''
+							}
+						}
+						getQuotes()
+						getCalendar()
+						break
+					case 'life':
+						getConstellation('aquarius')
+				}
+			}
+			getViewInfo()
+			function getViewInfo() {
+				tjs.ajax({
+					type: 'get',
+					url: 'https://api.vvhan.com/api/visitor.info',
+					success: (res) => {
+						let result = JSON.parse(res)
+						console.log(result)
+						document.querySelector('aside h2').innerHTML = result.location
+						document.querySelector('aside p').innerHTML = result.low
+						document.querySelector('aside span').innerHTML = result.time
+					}
+				})
+			}
+			// movie
+			function getMovieInfo() {
+				document.querySelector('#loading').style.display = 'block'
+				tjs.ajax({
+					type: 'get',
+					url: 'https://api.vvhan.com/api/douban',
+					success: (res) => {
+						let result = JSON.parse(res),
+							el = ''
+						if(result.success){
+							result.data.map(item => {
+								el += `<li>
+									<img src='${item.info.imgurl}'/>
+									<div onclick="window.open('${item.info.url}')">
+										<div>
+											<h2>${item.title}</h2>
+											<p>${item.info.yanyuan}</p>
+										</div>
+										<div>
+											<span>评分：${item.info.pingfen}</span>
+											<i>评论人数：${item.info.pingjia}</i>
+										</div>
+									</div>
+								</li>`
+							})
+						}
+						
+						document.querySelector('.movie-box ul').innerHTML = el
+						document.querySelector('#loading').style.display = 'none'
+						window.scrollReveal = ScrollReveal({
+							container: '.movie-box ul', // 父容器
+							reset: true, // 是否重复
+							origin: 'left', // 动画方向
+							delay: 100, // 延迟时间
+							interval: 200, //
+							rotate: { //旋转角度
+								x: 30,
+								y: 0,
+								z: 0
+							},
+							// scale: .7, // 动画缩放
+							distance: '150px', // 动画距离
+							duration: 1000, // 持续时间
+						});
+						scrollReveal.reveal('.movie-box li');
+					}
+				})
+			}
+			// 翻译
+			tjs.bind(document.querySelector('.trans-text button'), 'click', getTransText)
+			function getTransText(){
+				document.querySelector('.trans-text p').innerHTML = `<b>程序处理中，请稍后...</b><i></i>`
+				tjs.ajax({
+					type: 'get',
+					url: 'https://api.vvhan.com/api/fy',
+					params: {
+						text: document.querySelector('.trans-text textarea').value
+					},
+					success: (res) => {
+						let result = JSON.parse(res)
+						console.log(result)
+						if(result.success){
+							document.querySelector('.trans-text p b').style.display = 'none'
+							animText('.trans-text p', result.data.fanyi)
+						}
+					}
+				})
+			}
+			// 垃圾分类
+			tjs.bind(document.querySelector('.garbage-type button'), 'click', getGarbageType)
+			function getGarbageType(){
+				document.querySelector('.garbage-type p').innerHTML = `<b>程序处理中，请稍后...</b><i></i>`
+				tjs.ajax({
+					type: 'get',
+					url: 'https://api.vvhan.com/api/la.ji',
+					params: {
+						lj: document.querySelector('.garbage-type textarea').value
+					},
+					success: (res) => {
+						let result = JSON.parse(res)
+						console.log(result)
+						if(result.success){
+							document.querySelector('.garbage-type p b').style.display = 'none'
+							animText('.garbage-type p', result.sort)
+						}
+					}
+				})
+			}
+			// 名言
+			function getQuotes(){
+				tjs.ajax({
+					type: 'get',
+					url: 'https://api.vvhan.com/api/ian',
+					params: {
+						type: 'json'
+					},
+					success: (res) => {
+						let result = JSON.parse(res)
+						console.log(result)
+						if(result.success){
+							animText('.quotes p', result.data.vhan)
+						}
+					}
+				})
+			}
+			// 日历
+			function getCalendar(){
+				tjs.ajax({
+					type: 'get',
+					url: 'https://api.vvhan.com/api/moyu',
+					params: {
+						type: 'json'
+					},
+					success: (res) => {
+						let result = JSON.parse(res)
+						console.log(result)
+						if(result.success){
+							document.querySelector('.calendar').setAttribute('src', result.url)
+						}
+					}
+				})
+			}
+			// 新闻
+			function getNews(){
+				document.querySelector('.news-box ul').innerHTML = ''
+				tjs.ajax({
+					type: 'get',
+					url: 'https://api.vvhan.com/api/60s',
+					params: {
+						type: 'json'
+					},
+					success: (res) => {
+						let result = JSON.parse(res)
+						console.log(result)
+						if(result.success){
+							document.querySelector('.news-box h2').innerHTML = result.time.join(' ')
+							result.data.forEach((item, index) => {
+								document.querySelector('.news-box ul').innerHTML += `<li>${index+1}、${item}</li>`
+							})
+						}
+					}
+				})
+			}
+			// 星座
+			let conBtn = document.querySelectorAll('.constellation li')
+			conBtn.forEach(item => {
+				tjs.bind(item, 'click', function(e){
+					getConstellation(event.target.nodeName !== 'LI' ? event.target.parentElement.dataset.type : event.target.dataset.type)
+				})
+			})
+			function getConstellation(type){
+				tjs.ajax({
+					type: 'get',
+					url: 'https://api.vvhan.com/api/horoscope',
+					params: {
+						type: type,
+						time: 'today'
+					},
+					success: (res) => {
+						let result = JSON.parse(res)
+						console.log(result)
+						if(result.success){
+							// document.querySelector('.news-box h2').innerHTML = result.time.join(' ')
+							document.querySelector('.life-box .cons-content').innerHTML = `
+								<h3>${result.data.title}</h3>
+								<div class="lucky-box">
+									<span>幸运颜色：${result.data.luckycolor}</span>
+									<span>幸运数字：${result.data.luckynumber}</span>
+									<span>幸运星座：${result.data.luckyconstellation}</span>
+									<span>短评：${result.data.shortcomment}</span>
+								</div>
+								<p>${result.data.fortunetext.all}</p>
+								<p>${result.data.fortunetext.health}</p>
+								<p>${result.data.fortunetext.love}</p>
+								<p>${result.data.fortunetext.money}</p>
+								<p>${result.data.fortunetext.work}</p>
+								
+							`
+						}
+					}
+				})
+			}
+			
+			
+			// 打字
+			function animText(el, strs) {
+				let i = 0, timer = null, arrs = Array.from([...strs])
+				function addFont() {
+					if(timer){
+						clearTimeout(timer)
+					}
+					if(i>=arrs.length){
+						return
+					}
+					let span = document.createElement('span')
+					if(!arrs[i].trim()){
+						span.style.marginLeft = '5px'
+					}
+					span.innerHTML = arrs[i++]
+					document.querySelector(el).insertBefore(span, document.querySelector(`${el} i`)) 
+					timer = setInterval(() => {
+						addFont()
+					}, 100)
+				}
+				addFont()
+				tjs.bind(document.querySelector(el), 'copy', function(e){
+					e.preventDefault()
+					let selection = document.getSelection(),
+					dealContent = selection.toString().replace(/\n/g, '')
+					e.clipboardData.setData("text/plain",dealContent)
+				})
+			}
+			document.addEventListener('paste', function(e){
+				let paste = (e.clipboardData || window.clipboardData).getData('text');
+				console.log(paste)
+			})
+			
+			// 热点
+			function getHots(type) {
+				tjs.ajax({
+					type: 'get',
+					url: 'https://api.vvhan.com/api/hotlist',
+					params: {
+						type
+					},
+					success: (res) => {
+						let result = JSON.parse(res)
+						if(result.success){
+							createEl(result)
+						}
+					}
+				})
+			}
+			function createEl(val) {
+				let el = `<h2>${val.title + val.subtitle}<span>更新于: ${val.update_time}</span></h2><ul>`
+				val.data.map(item => {
+					el += `<li><a href="${item.url}" target="_blank"><span>${item.index}</span>${item.title}<i>${item.hot}</i></a></li>`
+				})
+				el += `</ul>`
+				document.querySelector('section>div').innerHTML = el
+			}
+			
+			var flag = false
+			addAnimate()
+			function addAnimate() {
+				let navBtn = document.querySelectorAll('nav>p'),
+					overlay = document.querySelector('section');	
+				navBtn.forEach(item => {
+					tjs.bind(item, 'click', function(event){
+						getHots(event.target.nodeName == 'SPAN' ? event.target.parentElement.dataset.type : event.target.dataset.type)
+						if (!tjs.hasClass(this, "inactive")) {
+							tjs.removeClass(this, 'active_reverse')
+							tjs.removeClass(this, 'inactive_reverse')
+							tjs.getSiblings(this).forEach(i => {
+								tjs.removeClass(i, 'active_reverse')
+								tjs.removeClass(i, 'inactive_reverse')
+							});	  
+								  
+							tjs.removeClass(overlay, 'active')
+							tjs.removeClass(overlay, 'active_reverse')
+							
+							
+							tjs.getSiblings(this).forEach(i => tjs.addClass(i, 'inactive'))
+							tjs.addClass(this, 'active')
+							
+							tjs.addClass(overlay, 'active')
+						}
+						let body = document.querySelector('body')
+						body.style.overflow = 'hidden'
+						body.scrollTo(0, 0)
+						colseFn(navBtn)
+					})
+				})
+			}
+			function colseFn(btn) {
+				if(flag)return
+				let close = document.querySelector(".close"),
+				AnimEnd = 'animationend webkitAnimationEnd mozAnimationEnd MSAnimationEnd oAnimationEnd';
+				tjs.bind(close, 'click', function(){
+					let navActive = document.querySelector('p.active')
+					let navInactive = document.querySelectorAll('p.inactive')
+					tjs.removeClass(navActive, 'active')
+					tjs.addClass(navActive, 'active_reverse')
+					navInactive.forEach(item => tjs.addClass(item, 'inactive_reverse'))
+					tjs.removeClass(this.parentElement, 'active');
+					tjs.addClass(this.parentElement, 'active_reverse');
+					navInactive.forEach(item => tjs.removeClass(item, 'inactive'))
+					document.querySelector('body').style.overflow = 'auto'
+					document.querySelector('section').scrollTo(0, 0)
+					flag = true
+					
+					btn.forEach(item => {
+						tjs.bind(item, 'animationend', function(){
+							tjs.removeClass(item, 'active_reverse')
+							tjs.removeClass(item, 'inactive_reverse')
+						})
+					})
+				});
+			}
+		</script>
+	</body>
+</html>

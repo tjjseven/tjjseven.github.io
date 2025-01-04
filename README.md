@@ -1,1 +1,2 @@
-﻿#blog
+# mycomp
+TS Components
